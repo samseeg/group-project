@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { HashRouter, Route } from 'react-router-dom';
 import './App.css';
+import Login from './Login/Login.js';
+import EmpMain from './Employee/EmpMain/EmpMain.js';
+import TimeCard from './Employee/TimeCard/TimeCard.js';
+import VacaRequest from './Employee/VacaRequests/VacaRequests.js';
+import Calendar from './Employee/Calendar/Calendar.js';
+import EmpRequest from './Admin/EmpRequest/EmpRequest.js';
+import EmpTime from './Admin/EmpTime/EmpTime.js';
+
 
 class App extends Component {
   render() {
     return (
+      <HashRouter>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Route component={ Login } path='/' exact />
+        <Route component={ EmpMain } path='/empmain' />
+        <Route component={ TimeCard } path='/timecard' /> 
+        <Route component={ VacaRequest } path='/vacarequests' />
+        <Route component={ Calendar } path='/calendar' />
+        <Route component={ EmpRequest } path='/emprequest' />
+        <Route component={ EmpTime } path='/emptime' />
       </div>
+      </HashRouter>
     );
   }
 }
