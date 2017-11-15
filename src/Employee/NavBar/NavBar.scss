@@ -2,8 +2,42 @@
 
 .NavBar {
     position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 32px;
 }
 
-.menu {
-    display: none;
+.notification {
+    img{
+        width: 50px;
+    }
+    margin-right: 10px;
+}
+
+.hamburger {
+    img{
+        width: 50px;
+    }
+}
+
+.slide {
+    position: fixed;
+    right: -25px;
+    display: flex;
+    flex-direction: column;
+    background: $darkestcolor;
+    width: 66vw;
+    height: 100vh;
+    transition: .5s;
+}
+
+.open {
+    height: 200px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 0 5px 10px;
+    z-index: 1;
 }
