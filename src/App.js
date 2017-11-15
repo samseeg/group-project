@@ -8,6 +8,7 @@ import VacaRequest from './Employee/VacaRequests/VacaRequests.js';
 import Calendar from './Employee/Calendar/Calendar.js';
 import EmpRequest from './Admin/EmpRequest/EmpRequest.js';
 import EmpTime from './Admin/EmpTime/EmpTime.js';
+import NavBar from './Employee/NavBar/NavBar.js'
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <HashRouter>
       <div className="App">
+        <NavBar />
         <Route component={ Login } path='/' exact />
         <Route component={ EmpMain } path='/empmain' />
         <Route component={ TimeCard } path='/timecard' /> 
