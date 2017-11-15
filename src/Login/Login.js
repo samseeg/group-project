@@ -9,10 +9,9 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
-                <a href='http://localhost:3005/auth'><button>Log In</button></a>
-                <a href='/auth/logout'><button>Log Out</button></a>
-
+            <div className='Login'>
+                <img src='https://i.imgur.com/Z9kYXzD.png' alt=''/>
+                <a href='http://localhost:3005/auth'><button>LOG IN</button></a>
             </div>
         )
     }
