@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
 .avatar {
-    border-radius: 50px;
-}
+  width: 200px;
+  border-radius: 50%; }
