@@ -23,14 +23,14 @@
     margin-top: 32px;
 }
 
-.hide {
+.menuHide {
     position: fixed;
     height: 100%;
     width: 66vw;
     // right: -100px;
     background: $darkestColor;
-    transition: .6s;
-    z-index: 1;
+    transition: .4s;
+    z-index: 3;
     margin-left: 66vw;
     a {
         color: $lightestColor;
@@ -48,7 +48,7 @@
     padding: 32px 32px 75px 32px;
 }
 
-.open {
+.menuOpen {
     position: fixed;
     transition: .6s;
     height: 100%;
@@ -57,7 +57,7 @@
     flex-direction: column;
     justify-content: space-between;
     background: $darkestColor;
-    z-index: 1;
+    z-index: 3;
     margin-left: 0;
     padding: 32px 32px 75px 32px;
     text-align: left;
@@ -70,4 +70,44 @@
     img {
         width: 50px;
     }
+}
+
+.notificationsHide {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: .4s;
+    height: 50vh;
+    top: -50vh;
+    width: 100%;
+    background: $darkColor;
+    z-index: 1;
+    padding-top: 32px;
+    img {
+        width: 50px;
+        position: absolute;
+        right: 92px;
+    }
+}
+
+.notificationsOpen {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: .6s;
+    top: 0vh;
+    height: 50vh;
+    width: 100%;
+    background: $darkColor;
+    z-index: 1;
+    padding-top: 32px;
+    img {
+        width: 50px;
+        position: absolute;
+        right: 92px;
+    }
+}
+
+.mapped_notifications {
+    margin-top: 70px;
 }
