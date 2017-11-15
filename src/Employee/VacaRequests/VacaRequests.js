@@ -8,8 +8,19 @@ class VacaRequests extends Component {
 
 
     render() {
-        return(
-            <div>Hi from vacarequests</div>
+        return (
+            <div>
+                <h1>Time Off Requests</h1>
+                <p>Min Date</p>
+
+                <p>Max Date</p>
+
+                <p>Drop Down menu goes here to for REASON</p>
+
+                <button>RESET</button>
+                <button>SUBMIT</button>
+
+            </div>
         )
     }
 }
