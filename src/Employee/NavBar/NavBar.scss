@@ -2,8 +2,112 @@
 
 .NavBar {
     position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
-.menu {
-    display: none;
+.notification {
+    img{
+        width: 50px;
+    }
+    margin-right: 10px;
+    margin-top: 32px;
+}
+
+.hamburger {
+    img{
+        width: 50px;
+    }
+    margin-right: 32px;
+    margin-top: 32px;
+}
+
+.menuHide {
+    position: fixed;
+    height: 100%;
+    width: 66vw;
+    // right: -100px;
+    background: $darkestColor;
+    transition: .4s;
+    z-index: 3;
+    margin-left: 66vw;
+    a {
+        color: $lightestColor;
+        text-decoration: none;
+    }
+    img {
+        width: 50px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 28px;
+    padding: 32px 32px 75px 32px;
+}
+
+.menuOpen {
+    position: fixed;
+    transition: .6s;
+    height: 100%;
+    width: 66vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: $darkestColor;
+    z-index: 3;
+    margin-left: 0;
+    padding: 32px 32px 75px 32px;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 28px;
+    a {
+        color: $lightestColor;
+        text-decoration: none;
+    }
+    img {
+        width: 50px;
+    }
+}
+
+.notificationsHide {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: .4s;
+    height: 50vh;
+    top: -50vh;
+    width: 100%;
+    background: $darkColor;
+    z-index: 1;
+    padding-top: 32px;
+    img {
+        width: 50px;
+        position: absolute;
+        right: 92px;
+    }
+}
+
+.notificationsOpen {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: .6s;
+    top: 0vh;
+    height: 50vh;
+    width: 100%;
+    background: $darkColor;
+    z-index: 1;
+    padding-top: 32px;
+    img {
+        width: 50px;
+        position: absolute;
+        right: 92px;
+    }
+}
+
+.mapped_notifications {
+    margin-top: 70px;
 }
