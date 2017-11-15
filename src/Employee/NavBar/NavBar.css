@@ -4,20 +4,58 @@
   position: fixed;
   display: flex;
   justify-content: flex-end;
-  width: 100%;
-  padding: 32px; }
+  width: 100%; }
 
 .notification {
-  margin-right: 10px; }
+  margin-right: 10px;
+  margin-top: 32px; }
   .notification img {
     width: 50px; }
 
-.hamburger img {
-  width: 50px; }
-
-.menu {
-  display: flex;
-  flex-direction: column; }
+.hamburger {
+  margin-right: 32px;
+  margin-top: 32px; }
+  .hamburger img {
+    width: 50px; }
 
 .hide {
-  display: none; }
+  position: fixed;
+  height: 100%;
+  width: 66vw;
+  background: #28262C;
+  transition: .6s;
+  z-index: 1;
+  margin-left: 66vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 28px;
+  padding: 32px 32px 75px 32px; }
+  .hide a {
+    color: #D6D3F0;
+    text-decoration: none; }
+  .hide img {
+    width: 50px; }
+
+.open {
+  position: fixed;
+  transition: .6s;
+  height: 100%;
+  width: 66vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #28262C;
+  z-index: 1;
+  margin-left: 0;
+  padding: 32px 32px 75px 32px;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 28px; }
+  .open a {
+    color: #D6D3F0;
+    text-decoration: none; }
+  .open img {
+    width: 50px; }

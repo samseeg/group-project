@@ -5,7 +5,6 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    padding: 32px;
 }
 
 .notification {
@@ -13,31 +12,62 @@
         width: 50px;
     }
     margin-right: 10px;
+    margin-top: 32px;
 }
 
 .hamburger {
     img{
         width: 50px;
     }
+    margin-right: 32px;
+    margin-top: 32px;
 }
 
-.slide {
+.hide {
     position: fixed;
-    right: -25px;
+    height: 100%;
+    width: 66vw;
+    // right: -100px;
+    background: $darkestColor;
+    transition: .6s;
+    z-index: 1;
+    margin-left: 66vw;
+    a {
+        color: $lightestColor;
+        text-decoration: none;
+    }
+    img {
+        width: 50px;
+    }
     display: flex;
     flex-direction: column;
-    background: $darkestcolor;
-    width: 66vw;
-    height: 100vh;
-    transition: .5s;
+    justify-content: space-between;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 28px;
+    padding: 32px 32px 75px 32px;
 }
 
 .open {
-    height: 200px;
-    color: white;
+    position: fixed;
+    transition: .6s;
+    height: 100%;
+    width: 66vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: 0 0 5px 10px;
+    justify-content: space-between;
+    background: $darkestColor;
     z-index: 1;
+    margin-left: 0;
+    padding: 32px 32px 75px 32px;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 28px;
+    a {
+        color: $lightestColor;
+        text-decoration: none;
+    }
+    img {
+        width: 50px;
+    }
 }

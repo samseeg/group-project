@@ -5,9 +5,9 @@ import './NavBar.css';
 
 class NavBar extends Component {
 
-    constructor(){
+    constructor() {
         super();
-        
+
         this.state = {
             menuOpen: false
         }
@@ -25,17 +25,18 @@ class NavBar extends Component {
         return (
             <div className='NavBar'>
                 <div className='notification'>
-                <img src='https://i.imgur.com/Kky6XPi.png' alt='' />
+                    <img src='https://i.imgur.com/Kky6XPi.png' alt='' />
                 </div>
                 <div className='hamburger' onClick={this.slide}>
                     <img src='https://i.imgur.com/R7uPgPM.png' alt='' />
                 </div>
-                <div className={this.state.menuOpen ? "slide open" : "slide"}>                    
-                        <Link className="active" to="/empmain">CLOCK IN/OUT</Link>
-                        <Link className="active" to="/timecard">TIME CARD</Link>
-                        <Link className="active" to="/vacarequests">TIME OFF REQUESTS</Link>
-                        <Link className="active" to="/calendar">CALENDAR</Link>
-                        <Link className="active" to="/">LOGOUT</Link>                    
+                <div className={this.state.menuOpen ? "open" : "hide"}>
+                    <img src='https://i.imgur.com/bFsllTF.png' alt='' onClick={this.slide} />
+                    <Link className="active" to="/empmain">CLOCK IN / OUT</Link>
+                    <Link className="active" to="/timecard">TIME CARD</Link>
+                    <Link className="active" to="/vacarequests">TIME OFF REQUESTS</Link>
+                    <Link className="active" to="/calendar">CALENDAR</Link>
+                    <Link className="active" to="/">LOGOUT</Link>
                 </div>
             </div>
         )
