@@ -1,2 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+.Login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #8E9AAF;
+  background-image: url("https://i.imgur.com/WohslW0.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: screen; }
+  .Login img {
+    width: 75vw;
+    margin-bottom: 100px; }
+  .Login button {
+    margin-bottom: 50px;
+    width: 148px;
+    height: 58px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: #D6D3F0;
+    color: #28262C;
+    box-shadow: 0px 3px 10px #28262C; }
