@@ -22,16 +22,15 @@ class EmpMain extends Component {
     render() {
         const user = this.props.user;
         return (
-            <div>
-                <h1>Hi from EmpMain</h1>
+            <div className='EmpMain'>
                 { user.id ? <img className="avatar" src={user.img} /> : null }
-                {user.id ? user.user_name : null}
+                <div className='name'>{user.id ? user.user_name : null}</div>
                 <Clock
                     ticking={true}
-                    format={'dddd, MMMM Do, YYYY, h:mm:ss A'}
+                    format={'dddd, MMMM Do, YYYY h:mm:ss A'}
                 />
-                <button>Clock In</button>
-                <h2>Timer goes here</h2>
+                <button className='clockin'>CLOCK IN</button>
+                <div className='timer'>00:00:00</div>
             </div>
         )
     }
