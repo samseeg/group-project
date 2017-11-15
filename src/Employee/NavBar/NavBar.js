@@ -45,7 +45,9 @@ class NavBar extends Component {
                     <Link className="active" to="/timecard">TIME CARD</Link>
                     <Link className="active" to="/vacarequests">TIME OFF REQUESTS</Link>
                     <Link className="active" to="/calendar">CALENDAR</Link>
-                    <Link className="active" to="/">LOGOUT</Link>
+                    {/* <Link className="active" to="/">LOGOUT</Link> */}
+                    <a href='/auth/logout' className="active">LOG OUT</a>
+
                 </div>
                 <div className={this.state.notificationsOpen ? "notificationsOpen" : "notificationsHide"}>
                     <img src='https://i.imgur.com/bFsllTF.png' alt='' onClick={this.notificationsSlide} />
