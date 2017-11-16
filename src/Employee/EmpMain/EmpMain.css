@@ -9,17 +9,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #C6B9CD;
-  background-image: url("https://i.imgur.com/hY4xYt7.jpg");
+  background: #8E9AAF;
+  background-image: url("https://i.imgur.com/DfQE2pj.jpg");
   background-blend-mode: screen;
   background-size: cover;
+  background-position: top;
   height: 100vh; }
 
 .avatar {
   width: 157.925px;
   border-radius: 50%;
   margin-top: 70px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  box-shadow: 0px 3px 10px #28262C; }
 
 .name {
   font-size: 28.27px;
@@ -31,7 +33,6 @@
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 700;
-  background: #8E9AAF;
   margin: 40px 0px;
   box-shadow: 0px 3px 8px #28262C;
   border: none; }

@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
 .container {
-  background: #C6B9CD;
-  background-image: url("https://i.imgur.com/hY4xYt7.jpg");
+  background: #8E9AAF;
+  background-image: url("https://i.imgur.com/DfQE2pj.jpg");
   background-blend-mode: screen;
   background-size: cover;
+  background-position: top;
   height: 100vh; }
 
 .Calendar {
@@ -24,6 +25,6 @@
   margin-bottom: 20px; }
 
 .content {
-  color: #847D89;
+  color: #3d434d;
   font-size: 16px;
   margin: 10px 0px; }

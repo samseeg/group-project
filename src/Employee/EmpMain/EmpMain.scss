@@ -10,10 +10,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: $lightColor;
-    background-image: url('https://i.imgur.com/hY4xYt7.jpg');
+    background: $mediumColor;
+    background-image: url('https://i.imgur.com/DfQE2pj.jpg');
     background-blend-mode: screen;
     background-size: cover;
+    background-position: top;
     height: 100vh;
 }
 
@@ -22,6 +23,7 @@
     border-radius: 50%;
     margin-top: 70px;
     margin-bottom: 15px;
+    box-shadow: 0px 3px 10px $darkestColor;
 }
 
 .name {
@@ -36,7 +38,7 @@
     font-size: 20px;
     letter-spacing: 1px;
     font-weight: 700;
-    background: $mediumColor;
+    // background: $lightColor;
     margin: 40px 0px;
     box-shadow: 0px 3px 8px $darkestColor;
     border: none;

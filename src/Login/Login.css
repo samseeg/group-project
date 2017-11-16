@@ -7,7 +7,7 @@
   justify-content: center;
   height: 100vh;
   background: #8E9AAF;
-  background-image: url("https://i.imgur.com/WohslW0.jpg");
+  background-image: url("https://i.imgur.com/DfQE2pj.jpg");
   background-size: cover;
   background-position: center;
   background-blend-mode: screen; }
@@ -21,6 +21,7 @@
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
-    background: #D6D3F0;
+    background: #C6B9CD;
+    border: none;
     color: #28262C;
     box-shadow: 0px 3px 10px #28262C; }

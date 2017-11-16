@@ -7,7 +7,7 @@
     justify-content: center;
     height: 100vh;
     background: $mediumColor;
-    background-image: url('https://i.imgur.com/WohslW0.jpg');
+    background-image: url('https://i.imgur.com/DfQE2pj.jpg');
     background-size: cover;
     background-position: center;
     background-blend-mode: screen;
@@ -22,7 +22,8 @@
         font-size: 20px;
         font-weight: 700;
         letter-spacing: 1px;
-        background: $lightestColor;
+        background: $lightColor;
+        border: none;
         color: $darkestColor;
         box-shadow: 0px 3px 10px $darkestColor;
     }

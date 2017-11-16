@@ -15,8 +15,8 @@ class Calendar extends Component {
             <div className='container'>
                 <NavBar />
                 <InfiniteCalendar
-                    width={311}
-                    height={200}
+                    width={375}
+                    height={210}
                     disabledDays={[0, 6]}
                     displayOptions={{
                         layout: 'portrait',
@@ -24,6 +24,20 @@ class Calendar extends Component {
                         shouldHeaderAnimate: false
                     }}
                     className={'Calendar'}
+                    theme={{
+                        selectionColor: '#9c92a3',
+                        textColor: {
+                            default: '#333',
+                            active: '#FFF'
+                        },
+                        weekdayColor: '#c6b9cd',
+                        headerColor: '#9c92a3',
+                        floatingNav: {
+                            background: '#2D2B32',
+                            color: '#FFF',
+                            chevron: '#A69CAD'
+                        }
+                    }}
                 />
                 <div className='all_requests'>
                     <div className='title'>All Requests</div>
