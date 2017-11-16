@@ -5,7 +5,8 @@ const express = require('express')
     , massive = require('massive')
     , passport = require('passport')
     , Auth0Strategy = require('passport-auth0')
-    , cors = require('cors');
+    , cors = require('cors')
+    , controller = require("./controllers/controller.js");
 
 const app = express();
 
@@ -25,6 +26,7 @@ massive(process.env.CONNECTION_STRING).then(db => {
     app.set('db', db);
 })
 
+//----------------MIDDLEWARES--------------------------------//
 passport.use(new Auth0Strategy({
     domain: process.env.AUTH_DOMAIN,
     clientID: process.env.AUTH_CLIENT_ID,
@@ -48,7 +50,8 @@ passport.use(new Auth0Strategy({
 
     
 }))
-
+//------------------------ENDPOINTS------------------------------//
+//-----auth0-----------------//
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
     successRedirect: 'http://localhost:3000/#/empmain',
@@ -77,7 +80,12 @@ passport.deserializeUser(function (id, done) {
             done(null, user[0])
         })
 })
-
+//------employee--------//
+app.get('/api/employee/get_timecard', controller.get_timecard);
+app.get('/api/admin/get_requests', controller.get_requests);
+// app.get('/api/employee/get_notification', controller.get_notification);
+app.post('/api/employee/submit_timecard', controller.submit_timecard);
+app.post('/api/employee/submit_requests', controller.submit_requests);
 
 const PORT = 3005;
 app.listen(PORT, console.log(`Listening on port ${PORT}`))
