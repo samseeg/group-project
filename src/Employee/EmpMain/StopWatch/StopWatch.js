@@ -3,6 +3,7 @@ import './StopWatch.css';
 import axios from 'axios';
 
 
+
 const formattedSeconds = (sec) =>
     Math.floor(sec / 3600) +
     ':' +
@@ -29,11 +30,34 @@ class StopWatch extends Component {
         this.state = {
             secondsElapsed: 0,
             laps: [],
-            lastClearedIncrementer: null
+            lastClearedIncrementer: null,
+            this:""
+            
         },
             this.incrementer = null;
+            this.recordTime = this.recordTime.bind(this)
+            this.handleStartClick = this.handleStartClick.bind(this)
     }
-
+    recordTime(){
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; 
+        var yyyy = today.getFullYear();
+        var HH = today.getHours(); 
+        var MM = today.getMinutes(); 
+        var SS = today.getSeconds();
+        if(dd<10) {
+            dd = '0'+dd
+        } 
+        
+        if(mm<10) {
+            mm = '0'+mm
+        } 
+        this.setState({
+            today : mm + '/' + dd + '/' + yyyy + " " + HH + ':' + MM + ':' + SS
+        })
+           
+    }
 
     handleStartClick() {
         this.incrementer = setInterval(() =>
@@ -63,12 +87,18 @@ class StopWatch extends Component {
         })
     }
 
+
+
     render() {
-
-
+        let now = new Date()
+        
         return (
 
+
             <div className='stopwatch'>
+
+                {/* ------------------recording timer -----------------*/}
+
 
 
                 {/* {(this.state.secondsElapsed === 0 ||
@@ -98,8 +128,8 @@ class StopWatch extends Component {
 
                 {(this.state.secondsElapsed === 0 ||
                     this.incrementer === this.state.lastClearedIncrementer
-                    ? <Button className="start-btn" onClick={this.handleStartClick.bind(this)}>CLOCK IN</Button>
-                    : <Button className="stop-btn clockout" onClick={this.handleStopClick.bind(this)}>CLOCK OUT</Button>
+                    ? <Button className="start-btn" onClick={()=>{this.handleStartClick(); this.recordTime()}}>CLOCK IN</Button>
+                    : <Button className="stop-btn clockout" onClick={()=>{this.handleStopClick(); this.recordTime()}}>CLOCK OUT</Button>
                 )}
 
                 <h1 className="stopwatch-timer">{formattedSeconds(this.state.secondsElapsed)}</h1>
@@ -113,6 +143,13 @@ class StopWatch extends Component {
                     ? <Button className="reset" onClick={this.handleResetClick.bind(this)}>RESET</Button>
                     : null
                 )}
+                      <div>
+                       
+                    
+                    
+                    <div>{this.state.today}</div>
+                </div>
+
             </div>
         )
     }
