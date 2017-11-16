@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import BadgeExampleSimple from './../Notification/Notification'
 import './NavBar.css';
+import {connect} from 'react-redux';
+import { getUserInfo } from './../../ducks/reducer.js';
+
 
 class NavBar extends Component {
 
@@ -15,6 +18,10 @@ class NavBar extends Component {
 
         this.menuSlide = this.menuSlide.bind(this);
         this.notificationsSlide = this.notificationsSlide.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.getUserInfo();
     }
 
     menuSlide() {
@@ -40,13 +47,24 @@ class NavBar extends Component {
                     <img src='https://i.imgur.com/R7uPgPM.png' alt='' />
                 </div>
                 <div className={this.state.menuOpen ? "menuOpen" : "menuHide"}>
+                    
+                    {!this.props.user.is_admin ?
+                    <div className={this.state.menuOpen ? "menuOpen" : "menuHide"}>
                     <img src='https://i.imgur.com/bFsllTF.png' alt='' onClick={this.menuSlide} />
                     <Link className="active" to="/empmain">CLOCK IN / OUT</Link>
                     <Link className="active" to="/timecard">TIME CARD</Link>
                     <Link className="active" to="/vacarequests">TIME OFF REQUESTS</Link>
                     <Link className="active" to="/calendar">CALENDAR</Link>
-                    {/* <Link className="active" to="/">LOGOUT</Link> */}
                     <a href='/auth/logout' className="active">LOG OUT</a>
+                    </div>
+                    :
+                    <div className={this.state.menuOpen ? "menuOpen" : "menuHide"}>
+                    <img src='https://i.imgur.com/bFsllTF.png' alt='' onClick={this.menuSlide} />
+                    <Link className='active' to="/emprequest">REQUESTS</Link>
+                    <Link className='active' to="/emptime">TIME</Link>
+                    <a href='/auth/logout' className="active">LOG OUT</a>
+                    </div>
+                    }
 
                 </div>
                 <div className={this.state.notificationsOpen ? "notificationsOpen" : "notificationsHide"}>
@@ -61,4 +79,10 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+function mapStateToProps(state) {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps, {getUserInfo})(NavBar);
