@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Calendar.css';
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
+import NavBar from './../NavBar/NavBar'
 
 class Calendar extends Component {
     constructor() {
@@ -11,22 +12,25 @@ class Calendar extends Component {
 
     render() {
         return (
-            <div>
-               
+            <div className='container'>
+                <NavBar />
                 <InfiniteCalendar
-                    width={375}
-                    height={220}
+                    width={311}
+                    height={200}
                     disabledDays={[0, 6]}
                     displayOptions={{
                         layout: 'portrait',
                         showOverlay: false,
                         shouldHeaderAnimate: false
                     }}
+                    className={'Calendar'}
                 />
-                <h2>All Requests</h2>
-                <p>List of Requests</p>
-                <p>Nathan is Hot: 12/5 - 12/7 APPROVED</p>
-                <p>Nathan is cute: 12/3 - 12/4 DENIED</p>
+                <div className='all_requests'>
+                    <div className='title'>All Requests</div>
+                    <div className='content'>Vacation: 12/5 - 12/7 APPROVED</div>
+                    <div className='content'>Doctor's Appointment: 12/3 DENIED</div>
+                    <div className='content'>Personal Day: 12/25 DENIED</div>
+                </div>
             </div>
 
         )
