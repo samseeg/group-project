@@ -1,1 +1,50 @@
 @import './../../../variables.scss';
+
+.VacaContainer {
+    background: $lightColor;
+    background-image: url('https://i.imgur.com/hY4xYt7.jpg');
+    background-blend-mode: screen;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 100px;
+    padding-left: 32px;
+    text-align: left;
+}
+
+.datepicker {
+    margin: 30px 0px !important;
+}
+
+.dropdown {
+    margin: 30px 0 30px -22px !important;
+}
+
+.title {
+    font-size: 28px;
+}
+
+.btn {
+    width: 146px;
+    height: 57px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    border: none;
+}
+
+.reset_vaca {
+    background: none;
+    box-shadow: 0 3px 10px $darkestColor;
+}
+
+.submit_vaca {
+    background: $mediumColor;
+    box-shadow: 0 3px 10px $darkestColor;    
+    margin-right: 32px;
+}
+
+.button_friends {
+    display: flex;
+    justify-content: space-between;
+}

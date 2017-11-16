@@ -46,10 +46,7 @@
   font-size: 76px;
   font-weight: 100;
   line-height: 160px;
-  margin: 0;
-  border: solid #cecfd0;
-  border-width: 1px 0;
-  background-color: black; }
+  margin: 0; }
 
 .stopwatch-laps {
   padding: 0 0 0 20px;
@@ -82,8 +79,7 @@
   letter-spacing: 1px;
   border: 0;
   border-radius: 50%;
-  outline: none;
-  background: white; }
+  outline: none; }
 
 .start-btn {
   color: #4bd761; }
