@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+.stopwatch {
+  text-align: center; }
+
+.stopwatch-timer {
+  font-size: 75px;
+  font-weight: 100;
+  line-height: 160px;
+  /* margin: 0; */
+  border: solid #cecfd0;
+  border-width: 1px 0;
+  margin: -60px;
+  background: none; }
+
+.stopwatch-laps {
+  padding: 0 0 0 20px;
+  list-style-type: none; }
+
+.stopwatch-lap {
+  font-size: 20px;
+  line-height: 60px;
+  padding-right: 20px;
+  text-align: right;
+  border-bottom: 1px solid #d9dae0; }
+
+.stopwatch-lap strong {
+  float: left;
+  color: #7f8083;
+  font-weight: 100; }
+
+.stopwatch-lap strong::before {
+  content: 'Lunch '; }
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 3px 10px #28262C;
+  font-size: 20px;
+  display: inline-block;
+  font-weight: 700;
+  width: 180px;
+  height: 60px;
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 0;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border: 0;
+  border-radius: 6px;
+  outline: none;
+  background: #8E9AAF; }
+
+.start-btn {
+  color: #28262C; }
+
+.stop-btn {
+  color: #D6D3F0; }
+
+.clockout {
+  background: #28262C;
+  box-shadow: 0px 3px 10px #28262C; }
+
+.reset {
+  width: 130px;
+  height: 50px;
+  background: none;
+  font-size: 16px;
+  margin: 0;
+  margin-top: 20px; }

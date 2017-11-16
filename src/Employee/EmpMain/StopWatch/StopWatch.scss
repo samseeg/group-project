@@ -1,0 +1,73 @@
+@import './../../../../_variables.scss';
+
+.stopwatch {
+    text-align: center; }
+  
+  .stopwatch-timer {
+    font-size: 75px;
+    font-weight: 100;
+    line-height: 160px;
+    /* margin: 0; */
+    border: solid #cecfd0;
+    border-width: 1px 0;
+    margin: -60px;
+    background: none;
+    }
+  
+  .stopwatch-laps {
+    padding: 0 0 0 20px;
+    list-style-type: none; }
+  
+  .stopwatch-lap {
+    font-size: 20px;
+    line-height: 60px;
+    padding-right: 20px;
+    text-align: right;
+    border-bottom: 1px solid #d9dae0; }
+  
+  .stopwatch-lap strong {
+    float: left;
+    color: #7f8083;
+    font-weight: 100; }
+  
+  .stopwatch-lap strong::before {
+    content: 'Lunch '; }
+  
+  .btn {
+    font-family: $displayFont;
+    box-shadow: 0px 3px 10px $darkestColor;
+    font-size: 20px;
+    display: inline-block;
+    font-weight: 700;
+    width: 180px;
+    height: 60px;
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border: 0;
+    border-radius: 6px; 
+    outline: none;
+    background: $mediumColor; }
+  
+  .start-btn {
+    color: $darkestColor; }
+  
+  .stop-btn {
+    color: $lightestColor; }
+
+.clockout {
+    background: $darkestColor;
+    box-shadow: 0px 3px 10px $darkestColor;
+}
+
+.reset {
+    width: 130px;
+    height: 50px;
+    background: none;
+    font-size: 16px;
+    margin: 0;
+    margin-top: 20px;
+}

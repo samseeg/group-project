@@ -4,7 +4,8 @@ import Clock from 'react-live-clock';
 import { connect } from 'react-redux';
 import { getUserInfo } from './../../ducks/reducer.js';
 import axios from 'axios';
-import NavBar from './../NavBar/NavBar'
+import NavBar from './../NavBar/NavBar';
+import StopWatch from './StopWatch/StopWatch.js'
 
 class EmpMain extends Component {
     constructor(props) {
@@ -19,9 +20,9 @@ class EmpMain extends Component {
         this.props.getUserInfo();
     }
 
-
     render() {
         const user = this.props.user;
+
         return (
             <div>
                 <NavBar />
@@ -30,10 +31,14 @@ class EmpMain extends Component {
                     <div className='name'>{user.id ? user.user_name : null}</div>
                     <Clock
                         ticking={true}
-                        format={'dddd, MMMM Do, YYYY h:mm:ss A'}
+                        format={`dddd, MMMM Do, YYYY`}
                     />
-                    <button className='clockin'>CLOCK IN</button>
-                    <div className='timer'>00:00:00</div>
+                    <Clock
+                        ticking={true}
+                        format={`h:mm:ss A`}
+                    />
+                    {/* <button className='clockin'>CLOCK IN</button> */}
+                    <StopWatch />
                 </div>
             </div>
         )
