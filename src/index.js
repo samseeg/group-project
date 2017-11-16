@@ -16,6 +16,10 @@ const muiTheme = getMuiTheme({
         "primary1Color": "#78909c",
         "primary2Color": "#78909c",
         "pickerHeaderColor": "#78909c"
+    },
+    "tableRow": {
+        "selectedColor": "#cfd8dc",
+        "textColor": "#263238"
     }
 })
 

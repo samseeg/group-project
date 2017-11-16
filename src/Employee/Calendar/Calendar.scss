@@ -2,10 +2,11 @@
 
 
 .container {
-    background: $lightColor;
-    background-image: url('https://i.imgur.com/hY4xYt7.jpg');
+    background: $mediumColor;
+    background-image: url('https://i.imgur.com/DfQE2pj.jpg');
     background-blend-mode: screen;
     background-size: cover;
+    background-position: top;
     height: 100vh;
     // display: flex;
     // flex-direction: column;
@@ -33,7 +34,7 @@
 }
 
 .content {
-    color: #847D89;
+    color: #3d434d;
     font-size: 16px;
     margin: 10px 0px;
 }
