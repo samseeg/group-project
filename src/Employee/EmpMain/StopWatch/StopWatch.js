@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './StopWatch.css';
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {getUserInfo} from './../../../ducks/reducer.js'
 
 
 
@@ -31,14 +33,19 @@ class StopWatch extends Component {
             secondsElapsed: 0,
             laps: [],
             lastClearedIncrementer: null,
-            this:""
+            this:"",
+            clockoutid:""
             
         },
             this.incrementer = null;
-            this.recordTime = this.recordTime.bind(this)
             this.handleStartClick = this.handleStartClick.bind(this)
+            this.submitClockin = this.submitClockin.bind(this)
+            this.addClockOut =this.addClockOut.bind(this)
     }
-    recordTime(){
+    componentDidMount(){
+        this.props.getUserInfo()
+    }
+    submitClockin () {
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1; 
@@ -53,10 +60,45 @@ class StopWatch extends Component {
         if(mm<10) {
             mm = '0'+mm
         } 
-        this.setState({
-            today : mm + '/' + dd + '/' + yyyy + " " + HH + ':' + MM + ':' + SS
-        })
-           
+       
+        today = mm + '/' + dd + '/' + yyyy + " " + HH + ':' + MM + ':' + SS
+        const body = {
+          user_id: this.props.user.id,
+          clock_in: today,
+          
+        }
+        axios.post('/api/employee/submit_clockin', body).then(response => {
+            this.setState({
+                clockoutid:response.data[0].id
+            })
+          })
+      }
+
+    addClockOut(){
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; 
+        var yyyy = today.getFullYear();
+        var HH = today.getHours(); 
+        var MM = today.getMinutes(); 
+        var SS = today.getSeconds();
+        if(dd<10) {
+            dd = '0'+dd
+        } 
+        
+        if(mm<10) {
+            mm = '0'+mm
+        } 
+       
+        today = mm + '/' + dd + '/' + yyyy + " " + HH + ':' + MM + ':' + SS
+        const body ={
+            clock_out: today,
+            total_hours: "",
+            clockoutid: this.state.clockoutid
+        }
+        axios.put('/api/employee/add_clockout', body).then(response => {
+            console.log('clock out submitted!')
+          })
     }
 
     handleStartClick() {
@@ -128,8 +170,8 @@ class StopWatch extends Component {
 
                 {(this.state.secondsElapsed === 0 ||
                     this.incrementer === this.state.lastClearedIncrementer
-                    ? <Button className="start-btn" onClick={()=>{this.handleStartClick(); this.recordTime()}}>CLOCK IN</Button>
-                    : <Button className="stop-btn clockout" onClick={()=>{this.handleStopClick(); this.recordTime()}}>CLOCK OUT</Button>
+                    ? <Button className="start-btn" onClick={()=>{this.handleStartClick(); this.submitClockin()}}>CLOCK IN</Button>
+                    : <Button className="stop-btn clockout" onClick={()=>{this.handleStopClick(); this.addClockOut()}}>CLOCK OUT</Button>
                 )}
 
                 <h1 className="stopwatch-timer">{formattedSeconds(this.state.secondsElapsed)}</h1>
@@ -156,9 +198,13 @@ class StopWatch extends Component {
 
 
 }
-
+function mapStateToProp(state) {
+    return {
+        user: state.user
+    }
+}
 const Button = (props) =>
     <button type="button" {...props} className={'btn ' + props.className} />
 
 
-export default StopWatch;
+export default connect(mapStateToProp , {getUserInfo})(StopWatch);
