@@ -1,2 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+.timecard_container {
+  background: #8E9AAF;
+  background-image: url("https://i.imgur.com/DfQE2pj.jpg");
+  background-blend-mode: screen;
+  background-size: cover;
+  background-position: top;
+  height: 100vh; }
+
+.whitespace {
+  height: 100px;
+  width: 100%; }
