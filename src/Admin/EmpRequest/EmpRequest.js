@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './EmpRequest.css';
+import NavBar from '../../Employee/NavBar/NavBar.js';
 
 class EmpRequests extends Component {
     constructor() {
@@ -8,8 +9,17 @@ class EmpRequests extends Component {
 
 
     render() {
-        return(
-            <div>Hi from the emprequests</div>
+        return (
+            <div>
+                <NavBar />
+                <div>
+                    <h1>Employee Requests</h1>
+
+                    <div>
+                        map over requests
+                    </div>
+                </div>
+            </div>
         )
     }
 }

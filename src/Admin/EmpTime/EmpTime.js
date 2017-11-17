@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './EmpTime.css';
+import NavBar from '../../Employee/NavBar/NavBar.js';
 
 class EmpTime extends Component {
     constructor() {
@@ -8,8 +9,17 @@ class EmpTime extends Component {
 
 
     render() {
-        return(
-            <div>Hi from emptime</div>
+        return (
+            <div>
+                <NavBar />
+                <div>
+                    <h1>Time Card</h1>
+
+                    <div>
+                        Employee pay period info
+                    </div>
+                </div>
+            </div>
         )
     }
 }
