@@ -1,1 +1,41 @@
 @import './../../../variables.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+.background {
+    background: $mediumColor;
+    background-image: url('https://i.imgur.com/DfQE2pj.jpg');
+    background-blend-mode: screen;
+    background-size: cover;
+    background-position: top;
+    height: 100vh;    
+}
+
+.requests_img {    
+    img {
+        width: 60px;
+        border-radius: 50%;
+    }
+}
+
+.requests_container {
+    position: relative;
+    top: 100px;    
+    margin: 0px 32px;
+    overflow: scroll;
+    height: 85vh;
+}
+
+.requests {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.requests_title {
+    font-size: 26px;
+    text-align: left;
+}
