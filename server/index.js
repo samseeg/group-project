@@ -87,6 +87,7 @@ app.get('/api/admin/get_requests', controller.get_requests);
 app.post('/api/employee/submit_clockin', controller.submit_clockin);
 app.post('/api/employee/submit_requests', controller.submit_requests);
 app.put('/api/employee/add_clockout', controller.add_clockout);
+app.put('/api/admin/approval', controller.update_approval);
 
 const PORT = 3005;
 app.listen(PORT, console.log(`Listening on port ${PORT}`))
