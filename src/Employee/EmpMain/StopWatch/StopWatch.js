@@ -59,7 +59,11 @@ class StopWatch extends Component {
         
         if(mm<10) {
             mm = '0'+mm
-        } 
+        }
+
+        if(MM<10) {
+            MM = '0'+MM
+        }
        
         today = mm + '/' + dd + " " + HH + ':' + MM
         const body = {
