@@ -37,16 +37,22 @@ module.exports = {
         },
 
     submit_requests: (req, res, next) => {        
-        const { user_id, start_date, end_date, approval} = req.body
+        const { user_id, start_date, end_date, reason } = req.body
         const db = req.app.get("db")
-        db.submit_requests([ user_id, start_date, end_date, approval])
+        db.submit_requests([ user_id, start_date, end_date, reason])
         .then(response => res.status(200).send(response))
         },
     //-----------PUT--------------------//
-    add_clockout: (req, res, next) => {         //this happens in admin page with save button. 
+    add_clockout: (req, res, next) => {          
         const { clock_out, total_hours, clockoutid} = req.body
         const db = req.app.get("db")
         db.add_clockout([ clock_out, total_hours, clockoutid])
         .then(response => res.status(200).send(response))
-        },    
-}
+        }, 
+    update_approval:(req, res, next) => {          
+        const { approval } = req.body
+        const db = req.app.get("db")
+        db.update_approval([ approval ])
+        .then(response => res.status(200).send(response))
+        }, 
+}   
