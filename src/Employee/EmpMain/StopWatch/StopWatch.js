@@ -59,9 +59,13 @@ class StopWatch extends Component {
         
         if(mm<10) {
             mm = '0'+mm
-        } 
+        }
+
+        if(MM<10) {
+            MM = '0'+MM
+        }
        
-        today = mm + '/' + dd + '/' + yyyy + " " + HH + ':' + MM + ':' + SS
+        today = mm + '/' + dd + " " + HH + ':' + MM
         const body = {
           user_id: this.props.user.id,
           clock_in: today,
@@ -90,7 +94,7 @@ class StopWatch extends Component {
             mm = '0'+mm
         } 
        
-        today = mm + '/' + dd + '/' + yyyy + " " + HH + ':' + MM + ':' + SS
+        today = mm + '/' + dd + " " + HH + ':' + MM
         const body ={
             clock_out: today,
             total_hours: "",
