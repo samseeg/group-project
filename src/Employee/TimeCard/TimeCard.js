@@ -30,15 +30,16 @@ class TimeCard extends Component {
   render() {
     const timecardDisplayed = this.state.timecard.map((timecard, i) => {
       return (
-        <TableBody displayRowCheckbox={false}>
+       
           <TableRow>
             <TableRowColumn>{timecard.clock_in}</TableRowColumn>
             <TableRowColumn>{timecard.clock_out}</TableRowColumn>
             <TableRowColumn>{timecard.total_hours}</TableRowColumn>
           </TableRow>
-        </TableBody>
+        
       )
     })
+    console.log(timecardDisplayed)
     return (
       <div>
         <NavBar />
@@ -55,7 +56,9 @@ class TimeCard extends Component {
                 <TableHeaderColumn>Total Hours</TableHeaderColumn>
               </TableRow>
             </TableHeader>
-            {timecardDisplayed}
+            <TableBody displayRowCheckbox={false}>
+              {timecardDisplayed}
+            </TableBody>
           </Table>
         </div>
       </div>
