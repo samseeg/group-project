@@ -12,8 +12,16 @@ class VacaRequests extends Component {
         this.state = {
             value: 0
         }
+        this.reloadPage = this.reloadPage.bind(this);
     }
 
+    reloadPage() {
+        window.location.reload();
+    }
+
+    submitForm = () => {
+        //logic will go here for submitting
+    }
 
     handleChange = (event, index, value) => this.setState({ value });
 
@@ -22,11 +30,12 @@ class VacaRequests extends Component {
             <div>
                 <NavBar />
                 <div className='VacaContainer'>
+               
                     <div className='title'>Time Off Requests</div>
                     <form>
+                    
                         <DatePicker firstDayOfWeek={0} className='datepicker' hintText="Start Date" />
                         <DatePicker firstDayOfWeek={0} hintText="End Date" />
-
 
                         <DropDownMenu value={this.state.value} onChange={this.handleChange} className='dropdown'>
                             <MenuItem value={0} primaryText="Reason" />
@@ -38,8 +47,9 @@ class VacaRequests extends Component {
                         </DropDownMenu>
                         {this.state.value === 5 ? <textarea rows='10' cols='50'></textarea> : null}
                         <div className='button_friends'>
-                            <button className='btn reset_vaca'>RESET</button>
-                            <button className='btn submit_vaca'>SUBMIT</button>
+                            {/* <input type="button" value="RESET" onClick="resetform()"  /> */}
+                            <button className='btn reset_vaca' type="reset" onClick={this.reloadPage}>RESET</button>
+                            <button className='btn submit_vaca' type="submit" onClick={this.submitForm}>SUBMIT</button>
                         </div>
                     </form>
                 </div>
