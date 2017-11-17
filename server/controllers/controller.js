@@ -28,10 +28,11 @@ module.exports = {
 
     //-------------POST------------------//
     
-    submit_timecard: (req, res, next) => {        
-        const { user_id, clock_in, clock_out, total_hours } = req.body
+    submit_clockin: (req, res, next) => {        
+        const { user_id, clock_in } = req.body
+        console.log(req.body)
         const db = req.app.get("db")
-        db.submit_timecard([ user_id, clock_in, clock_out, total_hours ])
+        db.submit_clockin([ user_id, clock_in ])
         .then(response => res.status(200).send(response))
         },
 
@@ -40,6 +41,12 @@ module.exports = {
         const db = req.app.get("db")
         db.submit_requests([ user_id, start_date, end_date, approval])
         .then(response => res.status(200).send(response))
-        }
-        
+        },
+    //-----------PUT--------------------//
+    add_clockout: (req, res, next) => {         //this happens in admin page with save button. 
+        const { clock_out, total_hours, clockoutid} = req.body
+        const db = req.app.get("db")
+        db.add_clockout([ clock_out, total_hours, clockoutid])
+        .then(response => res.status(200).send(response))
+        },    
 }
