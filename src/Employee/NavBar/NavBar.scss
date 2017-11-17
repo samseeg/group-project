@@ -10,9 +10,9 @@
 
 .notification {
     img{
-        width: 50px;
+        width: 35px;
     }
-    margin-right: 10px;
+    margin-right: 20px;
     margin-top: 32px;
 }
 
@@ -38,7 +38,7 @@
         text-decoration: none;
     }
     img {
-        width: 50px;
+        width: 40px;
     }
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@
         text-decoration: none;
     }
     img {
-        width: 50px;
+        width: 40px;
     }
 }
 
@@ -81,13 +81,13 @@
     height: 50vh;
     top: -50vh;
     width: 100%;
-    background: $darkColor;
+    background: #6C747F;
     z-index: 1;
     padding-top: 32px;
     img {
-        width: 50px;
+        width: 40px;
         position: absolute;
-        right: 92px;
+        right: 100px;
     }
 }
 
@@ -99,13 +99,13 @@
     top: 0vh;
     height: 50vh;
     width: 100%;
-    background: $darkColor;
+    background: #6C747F;
     z-index: 1;
     padding-top: 32px;
     img {
-        width: 50px;
+        width: 40px;
         position: absolute;
-        right: 92px;
+        right: 100px;
     }
 }
 
