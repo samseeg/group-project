@@ -20,6 +20,19 @@
     }
 }
 
+.dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.approval {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
 .requests_container {
     position: relative;
     top: 100px;    
@@ -38,4 +51,13 @@
 .requests_title {
     font-size: 26px;
     text-align: left;
+}
+
+.submit_btn {
+    width: 90px;
+    height: 40px;
+    background: $darkestColor;
+    color: $lightestColor;
+    border: none;
+    font-size: 16px;
 }

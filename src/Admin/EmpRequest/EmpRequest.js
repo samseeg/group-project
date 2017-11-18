@@ -45,23 +45,25 @@ class EmpRequests extends Component {
                 //   <TableRowColumn>{requests.approval}</TableRowColumn>
                 // </TableRow>
                 <div key={i} className='requests'>
-                    <div>
-                        <div className='requests_img'><img src={requests.img} /></div>
-                        <div> {requests.user_name}</div>
-                    </div>
-                    <div>
-                        <div> {start_date} to {end_date}</div>
-                        <div> {requests.reason}</div>
-                    </div>
-                    <div>
-                        <DropDownMenu value={this.state.value}>
-                            <MenuItem value={0} primaryText="Select" />
-                            <MenuItem value={"Approved"} primaryText="Approved" />
-                            <MenuItem value={"Denied"} primaryText="Denied" />
-                        </DropDownMenu>
+                    
+                        <div>
+                            <div className='requests_img'><img src={requests.img} /></div>
+                            <div> {requests.user_name}</div>
+                        </div>
+                        <div className='dates'>
+                            <div> {start_date} to <br></br>{end_date}</div>
+                            <div> {requests.reason}</div>
+                        </div>
+                        <div className='approval'>
+                            <DropDownMenu value={this.state.value}>
+                                <MenuItem value={0} primaryText="Select" />
+                                <MenuItem value={"Approved"} primaryText="Approved" />
+                                <MenuItem value={"Denied"} primaryText="Denied" />
+                            </DropDownMenu>
 
-                        <button>SUBMIT</button>
-                    </div>
+                            <button className='submit_btn'>SUBMIT</button>
+                        </div>
+                    
                 </div>
             )
         })
