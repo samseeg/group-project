@@ -13,10 +13,12 @@ class EmpRequests extends Component {
         this.state = {
             requests: [],
             value: 0,
-            approval:""
-
+            approval:"",
+            greyed_out: false
         }
         this.approveSubmit = this.approveSubmit.bind(this);
+        this.greyOut = this.greyOut.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -38,6 +40,18 @@ class EmpRequests extends Component {
     }
 
     handleChange = (event, index, value) => this.setState({value});
+
+    greyOut(){
+        this.setState({
+            greyed_out: true
+        })
+    }
+
+    handleClick(){
+        this.approveSubmit();
+        this.greyOut();
+    }
+
     render() {
         const requestsDisplayed = this.state.requests.map((requests, i) => {
             const start_date = requests.start_date.replace(/T.*/, '')
@@ -49,7 +63,7 @@ class EmpRequests extends Component {
                 //   <TableRowColumn>{requests.reason}</TableRowColumn>
                 //   <TableRowColumn>{requests.approval}</TableRowColumn>
                 // </TableRow>
-                <div key={i} className='purple_box'>
+                <div key={i} className={this.state.greyed_out ? 'greyed_out' : 'purple_box'}>
                     <div className='requests'>
 
                         <div>
@@ -68,7 +82,7 @@ class EmpRequests extends Component {
                                 <MenuItem value={"Denied"} primaryText="Denied" />
                             </DropDownMenu>
 
-                            <button className='submit_btn' onClick={this.approveSubmit}>SUBMIT</button>
+                            <button className='submit_btn' onClick={this.handleClick}>SUBMIT</button>
                         </div>
 
                     </div>

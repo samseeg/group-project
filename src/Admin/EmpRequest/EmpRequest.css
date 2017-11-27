@@ -45,6 +45,12 @@
   padding: .1px;
   background: rgba(156, 146, 163, 0.7); }
 
+.greyed_out {
+  margin-top: 32px;
+  padding: .1px;
+  background: rgba(156, 146, 163, 0.7);
+  opacity: .3; }
+
 .requests {
   display: flex;
   justify-content: space-between;

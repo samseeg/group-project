@@ -31,7 +31,7 @@ class TimeCard extends Component {
     const timecardDisplayed = this.state.timecard.map((timecard, i) => {
       return (
 
-        <TableRow>
+        <TableRow key={i}>
           <TableRowColumn>{timecard.clock_in}</TableRowColumn>
           <TableRowColumn>{timecard.clock_out}</TableRowColumn>
           <TableRowColumn>{timecard.total_hours}</TableRowColumn>
