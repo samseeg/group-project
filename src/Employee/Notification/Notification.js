@@ -2,7 +2,18 @@ import React from 'react';
 import Badge from 'material-ui/Badge';
 import IconButton from 'material-ui/IconButton';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
+import EmpRequest from './../../Admin/EmpRequest/EmpRequest.js';
 
+
+// class Notification extends Component {
+//   constructor() {
+//     super();
+
+//     this.state = {
+      
+//     }
+//   }
+// }
 const BadgeExampleSimple = () => (
   <div>
     <Badge
@@ -12,6 +23,7 @@ const BadgeExampleSimple = () => (
     >
       <IconButton tooltip="Notifications">
         <NotificationsIcon />
+      
       </IconButton>
     </Badge>
   </div>
