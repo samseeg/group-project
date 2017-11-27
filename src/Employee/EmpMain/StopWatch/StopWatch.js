@@ -23,6 +23,17 @@ const formattedSeconds = (sec) =>
 //      sec = 0;
 
 //  }
+function secondsToHms(d) {
+    d = Number(d);
+    var h = Math.floor(d / 3600);
+    var m = Math.floor(d % 3600 / 60);
+    var s = Math.floor(d % 3600 % 60);
+
+    var hDisplay = h > 0 ? h + ':' : "";
+    var mDisplay = m > 0 ? m : "";
+    var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+    return hDisplay + mDisplay; 
+}
 
 
 class StopWatch extends Component {
@@ -97,7 +108,7 @@ class StopWatch extends Component {
         today = mm + '/' + dd + " " + HH + ':' + MM
         const body ={
             clock_out: today,
-            total_hours: "",
+            total_hours: secondsToHms(this.state.secondsElapsed),
             clockoutid: this.state.clockoutid
         }
         axios.put('/api/employee/add_clockout', body).then(response => {
@@ -109,7 +120,7 @@ class StopWatch extends Component {
         this.incrementer = setInterval(() =>
             this.setState({
                 secondsElapsed: this.state.secondsElapsed + 1
-            }), 1000);
+            }), 1);
     }
 
     handleStopClick() {
