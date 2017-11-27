@@ -5,10 +5,6 @@ import 'react-infinite-calendar/styles.css';
 import NavBar from './../NavBar/NavBar'
 
 class Calendar extends Component {
-    constructor() {
-        super()
-    }
-
 
     render() {
         return (

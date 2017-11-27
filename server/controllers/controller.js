@@ -57,9 +57,9 @@ module.exports = {
         .then(response => res.status(200).send(response))
         }, 
     update_approval:(req, res, next) => {          
-        const { approval } = req.body
+        const { approval, userid } = req.body
         const db = req.app.get("db")
-        db.update_approval([ approval ])
+        db.update_approval([ approval, userid ])
         .then(response => res.status(200).send(response))
         }, 
 }   

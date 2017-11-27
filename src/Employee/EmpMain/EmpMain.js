@@ -3,7 +3,6 @@ import './EmpMain.css';
 import Clock from 'react-live-clock';
 import { connect } from 'react-redux';
 import { getUserInfo } from './../../ducks/reducer.js';
-import axios from 'axios';
 import NavBar from './../NavBar/NavBar';
 import StopWatch from './StopWatch/StopWatch.js'
 
@@ -27,7 +26,7 @@ class EmpMain extends Component {
             <div>
                 <NavBar />
                 <div className='EmpMain'>
-                    {user.id ? <img className="avatar" src={user.img} /> : null}
+                    {user.id ? <img className="avatar" src={user.img} alt="there" /> : null}
                     <div className='name'>{user.id ? user.user_name : null}</div>
                     <Clock
                         ticking={true}
@@ -48,7 +47,6 @@ class EmpMain extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log("state from private", state)
     return {
         user: state.user
     }

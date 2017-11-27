@@ -1,5 +1,5 @@
 update requests
 set approval = $1
-where id = $2;
+where user_id = $2;
 
 select * from requests

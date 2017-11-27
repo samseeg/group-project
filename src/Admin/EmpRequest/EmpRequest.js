@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import './EmpRequest.css';
-import NavBar from '../../Employee/NavBar/NavBar.js'; import {
-    Table,
-    TableBody,
-    TableHeader,
-    TableHeaderColumn,
-    TableRow,
-    TableRowColumn,
-} from 'material-ui/Table';
+import NavBar from '../../Employee/NavBar/NavBar.js'; 
 import DropDownMenu from "material-ui/DropDownMenu";
 import MenuItem from 'material-ui/MenuItem';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 
 class EmpRequests extends Component {
@@ -18,33 +12,34 @@ class EmpRequests extends Component {
         super()
         this.state = {
             requests: [],
-            value: 0
+            value: 0,
+            approval:""
 
         }
         this.approveSubmit = this.approveSubmit.bind(this);
     }
+
     componentDidMount() {
         axios.get('/api/admin/get_requests').then(response => {
             this.setState({
                 requests: response.data
             })
-            console.log(response.data)
         })
     }
 
     approveSubmit() {
         const body = {
-            approval: ''
+           approval:this.state.approval,
+           userid:""
         }
         axios.put('/api/admin/approval', body).then(response => {
-            console.log('Submit approved');
+            console.log("yay")
         })
     }
 
     handleChange = (event, index, value) => this.setState({value});
     render() {
         const requestsDisplayed = this.state.requests.map((requests, i) => {
-            console.log('REQUESTS', requests)
             const start_date = requests.start_date.replace(/T.*/, '')
             const end_date = requests.end_date ? requests.end_date.replace(/T.*/, '') : 'N/A'
             return (
@@ -58,7 +53,7 @@ class EmpRequests extends Component {
                     <div className='requests'>
 
                         <div>
-                            <div className='requests_img'><img src={requests.img} /></div>
+                            <div className='requests_img'><img src={requests.img} alt="hello"/></div>
                             <div className='requests_name'> {requests.user_name}</div>
                             <div className='dates'>
                                 <div> {start_date} to <br></br>{end_date}</div>
@@ -110,4 +105,11 @@ class EmpRequests extends Component {
     }
 }
 
-export default EmpRequests;
+function mapStateToProps(state) {
+    console.log("state from private", state)
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps)(EmpRequests);
