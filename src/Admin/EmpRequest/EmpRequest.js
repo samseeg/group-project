@@ -14,11 +14,13 @@ class EmpRequests extends Component {
             requests: [],
             value: 0,
             approval:"",
-            greyed_out: false
+            greyed_out: false,
+            select: false,
+            requestid:0
         }
         this.approveSubmit = this.approveSubmit.bind(this);
-        this.greyOut = this.greyOut.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        // this.greyOut = this.greyOut.bind(this);
+       
     }
 
     componentDidMount() {
@@ -29,28 +31,25 @@ class EmpRequests extends Component {
         })
     }
 
-    approveSubmit() {
+    approveSubmit(requestid) {
         const body = {
-           approval:this.state.approval,
-           userid:""
+            approval: this.state.approval,
+            requestid
         }
+        console.log(body)
         axios.put('/api/admin/approval', body).then(response => {
-            console.log("yay")
+            console.log("hi")
+            
         })
     }
 
-    handleChange = (event, index, value) => this.setState({value});
+    // greyOut(){
+    //     this.setState({
+    //         greyed_out: true
+    //     })
+    // }
 
-    greyOut(){
-        this.setState({
-            greyed_out: true
-        })
-    }
-
-    handleClick(){
-        this.approveSubmit();
-        this.greyOut();
-    }
+ 
 
     render() {
         const requestsDisplayed = this.state.requests.map((requests, i) => {
@@ -76,13 +75,14 @@ class EmpRequests extends Component {
                         </div>
 
                         <div className='approval'>
-                            <DropDownMenu value={this.state.value} onChange = {this.handleChange}>
-                                <MenuItem value={0} primaryText="Select" />
-                                <MenuItem value={"Approved"} primaryText="Approved" />
-                                <MenuItem value={"Denied"} primaryText="Denied" />
-                            </DropDownMenu>
+                            <select onChange={(e)=>this.setState({
+                                approval: e.target.value})}>
+                                <option value="Select">Select</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Denied">Denied</option>
+                            </select>
 
-                            <button className='submit_btn' onClick={this.handleClick}>SUBMIT</button>
+                            <button className='submit_btn' onClick={()=>{this.approveSubmit(requests.id)}}>SUBMIT</button>
                         </div>
 
                     </div>
