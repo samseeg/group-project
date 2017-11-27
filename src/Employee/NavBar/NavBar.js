@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import BadgeExampleSimple from './../Notification/Notification'
+// import BadgeExampleSimple from './../Notification/Notification'
 import './NavBar.css';
 import {connect} from 'react-redux';
 import { getUserInfo } from './../../ducks/reducer.js';
 import x_icon from './../../assets/x_icon_tiny.svg';
 import notification from './../../assets/notification_tiny.svg';
 import hamburger from './../../assets/hamburger_tiny.svg';
-import Notification from './../Notification/Notification.js';
+// import Notification from './../Notification/Notification.js';
 import axios from 'axios';
 
 
@@ -24,10 +24,6 @@ class NavBar extends Component {
 
         this.menuSlide = this.menuSlide.bind(this);
         this.notificationsSlide = this.notificationsSlide.bind(this);
-    }
-
-    componentDidMount() {
-        this.props.getUserInfo();
     }
 
     menuSlide() {
@@ -48,6 +44,7 @@ class NavBar extends Component {
                 requests: response.data
             })
         })
+        this.props.getUserInfo();
     }
     
     render() {
@@ -83,8 +80,7 @@ class NavBar extends Component {
                 <div className={this.state.notificationsOpen ? "notificationsOpen" : "notificationsHide"}>
                     <img src={x_icon} alt='' onClick={this.notificationsSlide} />
                     <div className='mapped_notifications'>
-                        {/* mapped notifications go here */}
-                        mapped notifications go here
+                        
                         
                     </div>
                 </div>

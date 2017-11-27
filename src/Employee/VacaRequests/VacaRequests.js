@@ -7,7 +7,7 @@ import NavBar from './../NavBar/NavBar';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { getUserInfo } from './../../ducks/reducer.js'
-import moment from 'moment'
+
 
 class VacaRequests extends Component {
     constructor(props) {

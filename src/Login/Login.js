@@ -3,11 +3,6 @@ import './Login.css';
 import logo from './../assets/logo2.svg'
 
 class Login extends Component {
-    constructor() {
-        super()
-    }
-
-
     render() {
         return (
             <div className='Login'>
