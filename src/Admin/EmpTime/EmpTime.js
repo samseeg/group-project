@@ -38,7 +38,7 @@ class EmpTime extends Component {
             name: this.state.name
         })
     }
-    handleChange = (event, index, value) => this.setState({value});
+    handleChange = (event, index, value) => this.setState({ value });
     render() {
         const EmptimecardDisplayed = this.state.timecard.map((timecard, i) => {
             return (
@@ -53,30 +53,32 @@ class EmpTime extends Component {
         return (
             <div>
                 <NavBar />
-                <div className='timecard_container'>
+                <div className='timecard_background'>
                     <div className='whitespace'></div>
-                    <Table>
-                        <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-                            <TableRow>
-                                <TableHeaderColumn colSpan="1">TIMECARD</TableHeaderColumn>
-                                <DropDownMenu  value={this.state.value} onChange={this.handleChange}>
+                    <div className='timecard_container'>
+                        <Table>
+                            <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+                                <TableRow>
+                                    <TableHeaderColumn colSpan="2">TIMECARD</TableHeaderColumn>
+                                    <DropDownMenu className='move' value={this.state.value} onChange={this.handleChange}>
                                         <MenuItem value={0} primaryText="Select" />
                                         <MenuItem onClick={() => { this.selectName("Megan Miller") }} value={"Megan Miller"} primaryText="Megan Miller" />
                                         <MenuItem onClick={() => { this.selectName("Eunbin Kang") }} value={"Eunbin Kang"} primaryText="Eunbin Kang" />
                                         <MenuItem onClick={() => { this.selectName("Sarah Jorgenson") }} value={"Sarah Jorgenson"} primaryText="Sarah Jorgenson" />
                                         <MenuItem onClick={() => { this.selectName("Samuel Burke") }} value={"Samuel Burke"} primaryText="Samuel Burke" />
-                                </DropDownMenu>
-                            </TableRow>
-                            <TableRow>
-                                <TableHeaderColumn>Clock In</TableHeaderColumn>
-                                <TableHeaderColumn>Clock Out</TableHeaderColumn>
-                                <TableHeaderColumn>Total Hours</TableHeaderColumn>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody displayRowCheckbox={false}>
-                            {EmptimecardDisplayed}
-                        </TableBody>
-                    </Table>
+                                    </DropDownMenu>
+                                </TableRow>
+                                <TableRow>
+                                    <TableHeaderColumn>Clock In</TableHeaderColumn>
+                                    <TableHeaderColumn>Clock Out</TableHeaderColumn>
+                                    <TableHeaderColumn>Total Hours</TableHeaderColumn>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody displayRowCheckbox={false}>
+                                {EmptimecardDisplayed}
+                            </TableBody>
+                        </Table>
+                    </div>
                 </div>
             </div>
         )
