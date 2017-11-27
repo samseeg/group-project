@@ -44,16 +44,18 @@ class EmpRequests extends Component {
                 //   <TableRowColumn>{requests.reason}</TableRowColumn>
                 //   <TableRowColumn>{requests.approval}</TableRowColumn>
                 // </TableRow>
-                <div key={i} className='requests'>
-                    
+                <div key={i} className='purple_box'>
+                    <div className='requests'>
+
                         <div>
                             <div className='requests_img'><img src={requests.img} /></div>
-                            <div> {requests.user_name}</div>
+                            <div className='requests_name'> {requests.user_name}</div>
+                            <div className='dates'>
+                                <div> {start_date} to <br></br>{end_date}</div>
+                                <div className='requests_reason'> {requests.reason}</div>
+                            </div>
                         </div>
-                        <div className='dates'>
-                            <div> {start_date} to <br></br>{end_date}</div>
-                            <div> {requests.reason}</div>
-                        </div>
+
                         <div className='approval'>
                             <DropDownMenu value={this.state.value}>
                                 <MenuItem value={0} primaryText="Select" />
@@ -63,7 +65,8 @@ class EmpRequests extends Component {
 
                             <button className='submit_btn'>SUBMIT</button>
                         </div>
-                    
+
+                    </div>
                 </div>
             )
         })
