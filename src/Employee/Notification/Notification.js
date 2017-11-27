@@ -31,7 +31,7 @@ class Notification extends Component {
       const approval = requests.approval
       return (
         <div>
-         { approval === "approved" || approval === "denied" ?<div>
+         { approval === "approved" || approval === "Denied" ?<div>
           {start_date}
           {end_date}
           {requests.approval}
