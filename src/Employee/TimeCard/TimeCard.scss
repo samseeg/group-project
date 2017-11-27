@@ -1,15 +1,21 @@
 @import './../../../variables.scss';
 
-.timecard_container {
+.timecard_background {
     background: $mediumColor;
     background-image: url('https://i.imgur.com/DfQE2pj.jpg');
     background-blend-mode: screen;
     background-size: cover;
     background-position: top;
-    height: 100vh;
+    min-height: 100vh;
+    overflow: scroll;
 }
 
 .whitespace {
     height: 100px;
     width: 100%;
+}
+
+.timecard_container {
+    height: 85vh;
+    overflow: scroll;
 }
