@@ -7,6 +7,8 @@ import { getUserInfo } from './../../ducks/reducer.js';
 import x_icon from './../../assets/x_icon_tiny.svg';
 import notification from './../../assets/notification_tiny.svg';
 import hamburger from './../../assets/hamburger_tiny.svg';
+import Notification from './../Notification/Notification.js';
+import axios from 'axios';
 
 
 class NavBar extends Component {
@@ -16,7 +18,8 @@ class NavBar extends Component {
 
         this.state = {
             menuOpen: false,
-            notificationsOpen: false
+            notificationsOpen: false,
+            requests: []
         }
 
         this.menuSlide = this.menuSlide.bind(this);
@@ -39,6 +42,14 @@ class NavBar extends Component {
         })
     }
 
+    componentDidMount() {
+        axios.get('/api/admin/get_requests').then(response => {
+            this.setState({
+                requests: response.data
+            })
+        })
+    }
+    
     render() {
         return (
             <div className='NavBar'>
@@ -74,6 +85,7 @@ class NavBar extends Component {
                     <div className='mapped_notifications'>
                         {/* mapped notifications go here */}
                         mapped notifications go here
+                        
                     </div>
                 </div>
             </div>

@@ -21,6 +21,7 @@ class EmpRequests extends Component {
             value: 0
 
         }
+        this.approveSubmit = this.approveSubmit.bind(this);
     }
     componentDidMount() {
         axios.get('/api/admin/get_requests').then(response => {
@@ -31,7 +32,16 @@ class EmpRequests extends Component {
         })
     }
 
+    approveSubmit() {
+        const body = {
+            approval: ''
+        }
+        axios.put('/api/admin/approval', body).then(response => {
+            console.log('Submit approved');
+        })
+    }
 
+    handleChange = (event, index, value) => this.setState({value});
     render() {
         const requestsDisplayed = this.state.requests.map((requests, i) => {
             console.log('REQUESTS', requests)
@@ -57,13 +67,13 @@ class EmpRequests extends Component {
                         </div>
 
                         <div className='approval'>
-                            <DropDownMenu value={this.state.value}>
+                            <DropDownMenu value={this.state.value} onChange = {this.handleChange}>
                                 <MenuItem value={0} primaryText="Select" />
                                 <MenuItem value={"Approved"} primaryText="Approved" />
                                 <MenuItem value={"Denied"} primaryText="Denied" />
                             </DropDownMenu>
 
-                            <button className='submit_btn'>SUBMIT</button>
+                            <button className='submit_btn' onClick={this.approveSubmit}>SUBMIT</button>
                         </div>
 
                     </div>
