@@ -27,11 +27,11 @@ function secondsToHms(d) {
     d = Number(d);
     var h = Math.floor(d / 3600);
     var m = Math.floor(d % 3600 / 60);
-    var s = Math.floor(d % 3600 % 60);
+    // var s = Math.floor(d % 3600 % 60);
 
     var hDisplay = h > 0 ? h + ':' : "";
-    var mDisplay = m > 0 ? m : "";
-    var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+    var mDisplay = m > 0 ? (m < 10 ? '0' + m : m) : "";
+    // var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
     return hDisplay + mDisplay; 
 }
 
@@ -47,7 +47,7 @@ class StopWatch extends Component {
             this:"",
             clockoutid:""
             
-        },
+        }
             this.incrementer = null;
             this.handleStartClick = this.handleStartClick.bind(this)
             this.submitClockin = this.submitClockin.bind(this)
@@ -60,10 +60,10 @@ class StopWatch extends Component {
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1; 
-        var yyyy = today.getFullYear();
+        // var yyyy = today.getFullYear();
         var HH = today.getHours(); 
         var MM = today.getMinutes(); 
-        var SS = today.getSeconds();
+        // var SS = today.getSeconds();
         if(dd<10) {
             dd = '0'+dd
         } 
@@ -93,10 +93,10 @@ class StopWatch extends Component {
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1; 
-        var yyyy = today.getFullYear();
+        // var yyyy = today.getFullYear();
         var HH = today.getHours(); 
         var MM = today.getMinutes(); 
-        var SS = today.getSeconds();
+        // var SS = today.getSeconds();
         if(dd<10) {
             dd = '0'+dd
         } 
@@ -147,7 +147,7 @@ class StopWatch extends Component {
 
 
     render() {
-        let now = new Date()
+        // let now = new Date()
         
         return (
 
