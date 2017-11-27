@@ -62,6 +62,7 @@ class NavBar extends Component {
                     :
                     <div className={this.state.menuOpen ? "menuOpen" : "menuHide"}>
                     <img src={x_icon} alt='' onClick={this.menuSlide} />
+                    <Link className="active" to="/empmain">DASHBOARD</Link>
                     <Link className='active' to="/emprequest">REQUESTS</Link>
                     <Link className='active' to="/emptime">TIME</Link>
                     <a href='/auth/logout' className="active">LOG OUT</a>
