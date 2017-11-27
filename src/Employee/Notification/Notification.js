@@ -30,8 +30,8 @@ class Notification extends Component {
       const end_date = requests.end_date ? requests.end_date.replace(/T.*/, '') : 'N/A'
       const approval = requests.approval
       return (
-        <div>
-         { approval === "approved" || approval === "Denied" ?<div>
+        <div key={i}>
+         { approval === "Approved" || approval === "Denied" ?<div>
           {start_date}
           {end_date}
           {requests.approval}

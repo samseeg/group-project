@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './EmpRequest.css';
 import NavBar from '../../Employee/NavBar/NavBar.js'; 
-import DropDownMenu from "material-ui/DropDownMenu";
-import MenuItem from 'material-ui/MenuItem';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
