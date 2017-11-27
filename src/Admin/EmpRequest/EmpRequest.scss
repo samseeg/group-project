@@ -1,1 +1,63 @@
 @import './../../../variables.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+.background {
+    background: $mediumColor;
+    background-image: url('https://i.imgur.com/DfQE2pj.jpg');
+    background-blend-mode: screen;
+    background-size: cover;
+    background-position: top;
+    height: 100vh;    
+}
+
+.requests_img {    
+    img {
+        width: 60px;
+        border-radius: 50%;
+    }
+}
+
+.dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.approval {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.requests_container {
+    position: relative;
+    top: 100px;    
+    margin: 0px 32px;
+    overflow: scroll;
+    height: 85vh;
+}
+
+.requests {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.requests_title {
+    font-size: 26px;
+    text-align: left;
+}
+
+.submit_btn {
+    width: 90px;
+    height: 40px;
+    background: $darkestColor;
+    color: $lightestColor;
+    border: none;
+    font-size: 16px;
+}
