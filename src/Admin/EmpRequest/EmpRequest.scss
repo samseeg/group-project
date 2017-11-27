@@ -58,6 +58,13 @@
     background: $darkColorTransparent;
 }
 
+.greyed_out {
+    margin-top: 32px;
+    padding: .1px;
+    background: $darkColorTransparent;
+    opacity: .3;
+}
+
 .requests {
     display: flex;
     justify-content: space-between;
