@@ -65,7 +65,7 @@ class EmpTime extends Component {
                                         <MenuItem onClick={() => { this.selectName("Megan Miller") }} value={"Megan Miller"} primaryText="Megan Miller" />
                                         <MenuItem onClick={() => { this.selectName("Eunbin Kang") }} value={"Eunbin Kang"} primaryText="Eunbin Kang" />
                                         <MenuItem onClick={() => { this.selectName("Sarah Jorgenson") }} value={"Sarah Jorgenson"} primaryText="Sarah Jorgenson" />
-                                        <MenuItem onClick={() => { this.selectName("Samuel Burke") }} value={"Samuel Burke"} primaryText="Samuel Burke" />
+                                        <MenuItem onClick={() => { this.selectName("Sam Seegmiller") }} value={"Sam Seegmiller"} primaryText="Samuel Seegmiller" />
                                     </DropDownMenu>
                                 </TableRow>
                                 <TableRow>
