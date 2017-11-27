@@ -20,37 +20,55 @@
     }
 }
 
+.requests_name {
+    margin-bottom: 20px;
+}
+
 .dates {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between
+    
+}
+
+.requests_reason {
+    margin-top: 20px;
+    font-weight: 700;
 }
 
 .approval {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    width: 100%;
-    margin-top: 20px;
+    align-items: center;
+    width: 40%;
 }
 
 .requests_container {
     position: relative;
     top: 100px;    
-    margin: 0px 32px;
+    // margin: 0px 32px;
     overflow: scroll;
     height: 85vh;
+}
+
+.purple_box {
+    margin-top: 32px;
+    padding: .1px;
+    background: $darkColorTransparent;
 }
 
 .requests {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 50px;
+    // flex-wrap: wrap;
+    margin: 32px;
 }
 
 .requests_title {
     font-size: 26px;
     text-align: left;
+    margin-left: 32px;
 }
 
 .submit_btn {
