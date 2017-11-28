@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { getUserInfo } from './../../ducks/reducer.js'
+import { getUserInfo } from './../../ducks/reducer.js';
+import './Notification.css';
+import red_x from './../../assets/red_x_icon.svg';
+import green_check from './../../assets/green_checkmark.svg';
 
 
 class Notification extends Component {
@@ -37,10 +40,11 @@ class Notification extends Component {
       
         <div key={i}>
         {approval === "Approved" || approval === "Denied" ?
-       <div className='single_request'>
-        <div>{requests.reason}</div>
-        <div>{start_date} to {end_date}</div>                
-        <div className={requests.approval==='Approved' ? 'green' : 'red'}>{requests.approval}</div>
+       <div className={requests.approval==='Approved' ? 'approved_notification' : 'denied_notification'}>
+       {requests.approval==='Approved' ? <div><img src={red_x} alt=''/></div> : <div><img src={green_check} alt=''/></div>}
+        <div>The time off you requested for</div> 
+        <div>{start_date} to {end_date}</div> 
+        <div>has been {requests.approval.toLowerCase()}.</div>
         </div> : null } 
     </div>
 

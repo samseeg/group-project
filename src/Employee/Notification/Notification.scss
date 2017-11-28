@@ -1,1 +1,15 @@
 @import './../../../variables.scss';
+
+.approved_notification {
+    background: #D8E9E2;
+    padding: 10px 10px 10px 90px;
+    text-align: left;
+    line-height: 22px;
+}
+
+.denied_notification {
+    background: #E8D9D9;
+    padding: 10px 10px 10px 90px;
+    text-align: left;
+    line-height: 22px;
+}
