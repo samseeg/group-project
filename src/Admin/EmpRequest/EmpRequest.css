@@ -33,6 +33,14 @@
   justify-content: space-around;
   align-items: center;
   width: 40%; }
+  .approval select {
+    font-size: 16px;
+    background: #D6D3F0;
+    box-shadow: 0px 2px 5px #28262C;
+    padding: 2px 10px;
+    height: 40px; }
+  .approval option {
+    background: #D6D3F0; }
 
 .requests_container {
   position: relative;
@@ -64,7 +72,8 @@
 .submit_btn {
   width: 90px;
   height: 40px;
-  background: #28262C;
+  background: linear-gradient(#665f5f, #28262C);
   color: #D6D3F0;
   border: none;
-  font-size: 16px; }
+  font-size: 16px;
+  box-shadow: 0px 3px 7px #413e3e; }
