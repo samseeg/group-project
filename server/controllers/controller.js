@@ -19,7 +19,7 @@ module.exports = {
 
     get_requests: (req, res, next) => {    
         const db = req.app.get("db")
-        db.get_requests()
+        db.get_requests([req.params.id])
             .then(response => {
                 console.log(response);
                 res.status(200).send(response)})
