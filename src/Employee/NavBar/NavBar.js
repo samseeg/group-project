@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import BadgeExampleSimple from './../Notification/Notification'
 import './NavBar.css';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { getUserInfo, getNotifications } from './../../ducks/reducer.js';
 import x_icon from './../../assets/x_icon_tiny.svg';
 import notification from './../../assets/notification_tiny.svg';
@@ -26,14 +26,11 @@ class NavBar extends Component {
         this.notificationsSlide = this.notificationsSlide.bind(this);
     }
 
-    componentWillReceiveProps(){
-        this.props.getNotifications(this.props.user.id);
+    componentWillReceiveProps() {
+        if (this.props.user.id) {
+            this.props.getNotifications(this.props.user.id);
+        }
     }
-
-    // componentDidMount() {
-    //     this.props.getNotifications(this.props.user.id);
-    //     console.log('hi')
-    // }
 
     menuSlide() {
         this.setState({
@@ -47,45 +44,45 @@ class NavBar extends Component {
         })
     }
 
-    
-    
+
+
     render() {
         return (
-            
+
             <div className='NavBar'>
                 <div className='notification' onClick={this.notificationsSlide}>
                     {this.props.request.length ? <div className='circle'>{this.props.request.length}</div> : null}
-                    <img src={notification} alt=''/>
+                    <img src={notification} alt='' />
                 </div>
 
                 <div className='hamburger' onClick={this.menuSlide}>
                     <img src={hamburger} alt='' />
                 </div>
-                    
-                    {!this.props.user.is_admin ?
+
+                {!this.props.user.is_admin ?
                     <div className={this.state.menuOpen ? "menuOpen" : "menuHide"}>
-                    <img src={x_icon} alt='' onClick={this.menuSlide} />
-                    <Link className="active" to="/empmain">CLOCK IN / OUT</Link>
-                    <Link className="active" to="/timecard">TIME CARD</Link>
-                    <Link className="active" to="/vacarequests">TIME OFF REQUESTS</Link>
-                    <Link className="active" to="/calendar">CALENDAR</Link>
-                    <a href='/auth/logout' className="active">LOG OUT</a>
+                        <img src={x_icon} alt='' onClick={this.menuSlide} />
+                        <Link className="active" to="/empmain">CLOCK IN / OUT</Link>
+                        <Link className="active" to="/timecard">TIME CARD</Link>
+                        <Link className="active" to="/vacarequests">TIME OFF REQUESTS</Link>
+                        <Link className="active" to="/calendar">CALENDAR</Link>
+                        <a href='/auth/logout' className="active">LOG OUT</a>
                     </div>
                     :
                     <div className={this.state.menuOpen ? "menuOpen" : "menuHide"}>
-                    <img src={x_icon} alt='' onClick={this.menuSlide} />
-                    <Link className="active" to="/empmain">DASHBOARD</Link>
-                    <Link className='active' to="/emprequest">REQUESTS</Link>
-                    <Link className='active' to="/emptime">TIME</Link>
-                    <a href='/auth/logout' className="active">LOG OUT</a>
+                        <img src={x_icon} alt='' onClick={this.menuSlide} />
+                        <Link className="active" to="/empmain">DASHBOARD</Link>
+                        <Link className='active' to="/emprequest">REQUESTS</Link>
+                        <Link className='active' to="/emptime">TIME</Link>
+                        <a href='/auth/logout' className="active">LOG OUT</a>
                     </div>
-                    }
+                }
 
                 <div className={this.state.notificationsOpen ? "notificationsOpen" : "notificationsHide"}>
                     <img src={x_icon} alt='' onClick={this.notificationsSlide} />
                     <div className='mapped_notifications'>
-                        <Notification/>
-                        
+                        <Notification />
+
                     </div>
                 </div>
             </div>
@@ -100,4 +97,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {getUserInfo, getNotifications})(NavBar);
+export default connect(mapStateToProps, { getUserInfo, getNotifications })(NavBar);
