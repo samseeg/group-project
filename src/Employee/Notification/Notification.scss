@@ -1,1 +1,41 @@
 @import './../../../variables.scss';
+
+
+.notification_container {
+    height: 34vh;
+    overflow: scroll;
+}
+
+.approved_notification {
+    background: #D8E9E2;
+    padding: 10px 10px 10px 0px;
+    text-align: left;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    border-bottom: 1px solid #B2DDCB;
+    img {
+        position: static;
+        margin-left: 28px;
+        margin-right: 28px;
+        width: 30px;
+    }
+}
+
+.denied_notification {
+    background: #E8D9D9;
+    padding: 10px 10px 10px 0px;
+    text-align: left;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    border-bottom: 1px solid #E2AFAF;
+    img {
+        position: static;
+        margin-left: 28px;
+        margin-right: 28px;
+        width: 30px;
+    }
+}

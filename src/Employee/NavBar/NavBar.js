@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 // import BadgeExampleSimple from './../Notification/Notification'
 import './NavBar.css';
 import {connect} from 'react-redux';
-import { getUserInfo } from './../../ducks/reducer.js';
+import { getUserInfo, getNotifications } from './../../ducks/reducer.js';
 import x_icon from './../../assets/x_icon_tiny.svg';
 import notification from './../../assets/notification_tiny.svg';
 import hamburger from './../../assets/hamburger_tiny.svg';
 import Notification from './../Notification/Notification.js';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 class NavBar extends Component {
@@ -26,6 +26,15 @@ class NavBar extends Component {
         this.notificationsSlide = this.notificationsSlide.bind(this);
     }
 
+    componentWillReceiveProps(){
+        this.props.getNotifications(this.props.user.id);
+    }
+
+    // componentDidMount() {
+    //     this.props.getNotifications(this.props.user.id);
+    //     console.log('hi')
+    // }
+
     menuSlide() {
         this.setState({
             menuOpen: !this.state.menuOpen
@@ -38,20 +47,15 @@ class NavBar extends Component {
         })
     }
 
-    componentDidMount() {
-        axios.get('/api/admin/get_requests').then(response => {
-            this.setState({
-                requests: response.data
-            })
-        })
-        this.props.getUserInfo();
-    }
+    
     
     render() {
         return (
+            
             <div className='NavBar'>
                 <div className='notification' onClick={this.notificationsSlide}>
-                    <img src={notification} alt='' />
+                    {this.props.request.length ? <div className='circle'>{this.props.request.length}</div> : null}
+                    <img src={notification} alt=''/>
                 </div>
 
                 <div className='hamburger' onClick={this.menuSlide}>
@@ -91,8 +95,9 @@ class NavBar extends Component {
 
 function mapStateToProps(state) {
     return {
-        user: state.user
+        user: state.user,
+        request: state.request
     }
 }
 
-export default connect(mapStateToProps, {getUserInfo})(NavBar);
+export default connect(mapStateToProps, {getUserInfo, getNotifications})(NavBar);

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { connect } from 'react-redux';
-import { getUserInfo } from './../../ducks/reducer.js'
+import { getUserInfo, getNotifications } from './../../ducks/reducer.js';
+import './Notification.css';
+import red_x from './../../assets/red_x_icon.svg';
+import green_check from './../../assets/green_checkmark.svg';
 
 
 class Notification extends Component {
@@ -14,51 +17,46 @@ class Notification extends Component {
     }
     // this.notificationRender = this.notificationRender.bind(this)
   }
-  componentDidUpdate(id) {
-    axios.get(`/api/admin/get_requests/${this.props.user.id}`).then(response => {
-        this.setState({
-            requests: response.data
-        })
 
-    })
-}
-  // notificationRender(value){
-  //   this.setState({
-  //     rendering: !this.state.rendering
+//   componentDidMount() {
+//     this.props.getNotifications(this.props.user.id);
+// }
 
-  //   })
-  // }
   render() {
-    const notificationDisplayed = this.state.requests.map((requests, i) => {
+    const notificationDisplayed = this.props.request.map((requests, i) => {
       const start_date = requests.start_date.replace(/T.*/, '')
       const end_date = requests.end_date ? requests.end_date.replace(/T.*/, '') : 'N/A'
       const approval = requests.approval
       return (
-      
+
         <div key={i}>
-        {approval === "Approved" || approval === "Denied" ?
-       <div className='single_request'>
-        <div>{requests.reason}</div>
-        <div>{start_date} to {end_date}</div>                
-        <div className={requests.approval==='Approved' ? 'green' : 'red'}>{requests.approval}</div>
-        </div> : null } 
-    </div>
+          {approval === "Approved" || approval === "Denied" ?
+            <div className={requests.approval === 'Approved' ? 'approved_notification' : 'denied_notification'}>
+              {requests.approval === 'Approved' ? <img src={green_check} alt='' /> : <img src={red_x} alt='' />}
+              <div>
+                <div>The time off you requested for</div>
+                <div>{start_date} to {end_date}</div>
+                <div>has been {requests.approval.toLowerCase()}.</div>
+              </div>
+            </div> : null}
+        </div>
 
       )
     })
-    
+
     return (
-      <div>
-       {notificationDisplayed }
-        </div>
+      <div className='notification_container'>
+        {notificationDisplayed}
+      </div>
     )
   }
 }
 function mapStateToProp(state) {
   return {
-      user: state.user
+    user: state.user,
+    request: state.request
   }
 }
 
-export default connect(mapStateToProp, { getUserInfo })(Notification);
+export default connect(mapStateToProp, { getUserInfo, getNotifications })(Notification);
 

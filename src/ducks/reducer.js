@@ -6,7 +6,7 @@ const initialState = {
 }
 
 const GET_USER_INFO = "GET_USER_INFO";
-const REMOVE_REQUEST = "REMOVE_REQUEST";
+const GET_NOTIFICATIONS = "GET_NOTIFICATIONS";
 
 export function getUserInfo() {
     const userData = axios.get('/auth/me')
@@ -19,21 +19,23 @@ export function getUserInfo() {
     }
 }
 
-export function removeRequest(request){
-    return {
-        type: REMOVE_REQUEST,
-        payload: request
-    }
+export function getNotifications(id){
+   let promise = axios.get(`/api/admin/get_requests/${id}`).then(response => { 
+    //    console.log(response.data)       
+        return response.data
+      })
+      return {
+          type: GET_NOTIFICATIONS,
+          payload: promise
+      }
 }
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case GET_USER_INFO + '_FULFILLED':
             return Object.assign({}, state, { user: action.payload })
-        case REMOVE_REQUEST + '_FULFILLED':
-            let newArray = state.request.slice();
-            newArray.splice(action.payload, 1);
-            return Object.assign({}, state, { request: newArray })
+        case GET_NOTIFICATIONS + '_FULFILLED':
+            return Object.assign({}, state, {request: action.payload})
         default:
             return state;
     }

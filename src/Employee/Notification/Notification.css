@@ -1,2 +1,35 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+.notification_container {
+  height: 34vh;
+  overflow: scroll; }
+
+.approved_notification {
+  background: #D8E9E2;
+  padding: 10px 10px 10px 0px;
+  text-align: left;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  border-bottom: 1px solid #B2DDCB; }
+  .approved_notification img {
+    position: static;
+    margin-left: 28px;
+    margin-right: 28px;
+    width: 30px; }
+
+.denied_notification {
+  background: #E8D9D9;
+  padding: 10px 10px 10px 0px;
+  text-align: left;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  border-bottom: 1px solid #E2AFAF; }
+  .denied_notification img {
+    position: static;
+    margin-left: 28px;
+    margin-right: 28px;
+    width: 30px; }
