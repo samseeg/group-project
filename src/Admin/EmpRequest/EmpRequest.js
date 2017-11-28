@@ -69,7 +69,7 @@ class EmpRequests extends Component {
                 <div key={i} className={this.state.greyed_out ? 'greyed_out' : 'purple_box'}>
                     <div className='requests'>
 
-                        <div>
+                        <div className='requests_block'>
                             <div className='requests_img'><img src={requests.img} alt="hello"/></div>
                             <div className='requests_name'> {requests.user_name}</div>
                             <div className='dates'>
