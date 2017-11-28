@@ -7,7 +7,8 @@ class Notification extends Component {
     super();
     this.state = {
       requests: [],
-      rendering: false,
+      users: [],
+      rendering: false
     }
     // this.notificationRender = this.notificationRender.bind(this)
   }
@@ -28,15 +29,18 @@ class Notification extends Component {
     const notificationDisplayed = this.state.requests.map((requests, i) => {
       const start_date = requests.start_date.replace(/T.*/, '')
       const end_date = requests.end_date ? requests.end_date.replace(/T.*/, '') : 'N/A'
-      const approval = requests.approval
+      const approval = requests.approval ? requests.approval.replace(/T.*/, '') : 'N/A'
       return (
+        <div key={i}> {requests.user_name ===  "Sarah Jorgenson" ?  
         <div key={i}>
-         { approval === "Approved" || approval === "Denied" ?<div>
+         { approval === "Approved" || approval === "Denied" ? <div>
           {start_date}
           {end_date}
-          {requests.approval}
+          {approval}
           </div> : null  }
         </div> 
+        : null}
+        </div>
 
       )
     })

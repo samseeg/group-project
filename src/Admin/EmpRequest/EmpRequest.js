@@ -3,6 +3,7 @@ import './EmpRequest.css';
 import NavBar from '../../Employee/NavBar/NavBar.js'; 
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { removeRequest } from './../../ducks/reducer.js'
 
 
 class EmpRequests extends Component {
@@ -17,6 +18,7 @@ class EmpRequests extends Component {
             requestid:0
         }
         this.approveSubmit = this.approveSubmit.bind(this);
+        this.reloadPage = this.reloadPage.bind(this);
         // this.greyOut = this.greyOut.bind(this);
        
     }
@@ -39,6 +41,10 @@ class EmpRequests extends Component {
             console.log("hi")
             
         })
+    }
+
+    reloadPage() {
+        window.location.reload();
     }
 
     // greyOut(){
@@ -80,7 +86,7 @@ class EmpRequests extends Component {
                                 <option value="Denied">Denied</option>
                             </select>
 
-                            <button className='submit_btn' onClick={()=>{this.approveSubmit(requests.id)}}>SUBMIT</button>
+                            <button className='submit_btn' onClick={()=>{this.approveSubmit(requests.id); this.props.removeRequest(i); this.reloadPage()}}>SUBMIT</button>
                         </div>
 
                     </div>
@@ -124,4 +130,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(EmpRequests);
+export default connect(mapStateToProps, { removeRequest })(EmpRequests);

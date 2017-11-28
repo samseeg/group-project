@@ -78,9 +78,9 @@ class VacaRequests extends Component {
 
                         <DropDownMenu value={this.state.value} onChange={this.handleChange} className='dropdown'>
                             <MenuItem value={0} primaryText="Reason" />
-                            <MenuItem value={"vacation"} primaryText="Vacation" />
+                            <MenuItem value={"Vacation"} primaryText="Vacation" />
                             <MenuItem value={"Personal Day"} primaryText="Personal Day" />
-                            <MenuItem value={"Doctor's Appoiontment"} primaryText="Doctor's Appoiontment" />
+                            <MenuItem value={"Doctor's Appointment"} primaryText="Doctor's Appointment" />
                             <MenuItem value={"Extra Holiday Time"} primaryText="Extra Holiday Time" />
                             <MenuItem value={"Other"} primaryText="Other" />
                         </DropDownMenu>
