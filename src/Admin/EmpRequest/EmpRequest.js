@@ -24,7 +24,7 @@ class EmpRequests extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/admin/get_requests').then(response => {
+        axios.get('/api/admin/get_admin_requests').then(response => {
             this.setState({
                 requests: response.data
             })
@@ -47,12 +47,7 @@ class EmpRequests extends Component {
         window.location.reload();
     }
 
-    // greyOut(){
-    //     this.setState({
-    //         greyed_out: true
-    //     })
-    // }
-
+ 
  
 
     render() {
@@ -60,12 +55,7 @@ class EmpRequests extends Component {
             const start_date = requests.start_date.replace(/T.*/, '')
             const end_date = requests.end_date ? requests.end_date.replace(/T.*/, '') : 'N/A'
             return (
-                // <TableRow>
-                //   <TableRowColumn>{requests.start_date}</TableRowColumn>
-                //   <TableRowColumn>{requests.end_date}</TableRowColumn>
-                //   <TableRowColumn>{requests.reason}</TableRowColumn>
-                //   <TableRowColumn>{requests.approval}</TableRowColumn>
-                // </TableRow>
+           
                 <div key={i} className={this.state.greyed_out ? 'greyed_out' : 'purple_box'}>
                     <div className='requests'>
 
@@ -96,24 +86,6 @@ class EmpRequests extends Component {
         return (
             <div className='background'>
                 <NavBar />
-                <div>
-                    {/* <Table>
-                            <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-                                <TableRow>
-                                    <TableHeaderColumn colSpan="4">Employee Requests</TableHeaderColumn>
-                                </TableRow>
-                                <TableRow>
-                                    <TableHeaderColumn>Start Date</TableHeaderColumn>
-                                    <TableHeaderColumn>End Date</TableHeaderColumn>
-                                    <TableHeaderColumn>Reason</TableHeaderColumn>
-                                    <TableHeaderColumn>Approval</TableHeaderColumn>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody displayRowCheckbox={false}>
-                            {requestsDisplayed}
-                            </TableBody>
-                        </Table> */}
-                </div>
                 <div className='requests_container'>
                     <div className='requests_title'>Employee Requests</div>
                     {requestsDisplayed}
