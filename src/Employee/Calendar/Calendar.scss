@@ -16,15 +16,17 @@
 .Calendar {
     position: absolute;
     top: 100px;
-    margin: auto;
+    // margin: auto;
 }
 
 .all_requests {
     position: absolute;
     top: 460px;
     text-align: left;
-    margin-top: 20px;
-    margin-left: 32px;
+    padding: 20px 32px;
+    overflow: scroll;
+    height: 31vh;
+    width: 100%;
 }
 
 .title {
@@ -37,4 +39,19 @@
     color: #3d434d;
     font-size: 16px;
     margin: 10px 0px;
+}
+
+.single_request {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    line-height: 26px;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
 }

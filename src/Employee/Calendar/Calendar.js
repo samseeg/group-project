@@ -34,11 +34,10 @@ class Calendar extends Component {
 
              <div key={i}>
                 {approval === "Approved" || approval === "Denied" ?
-               <div>
-                {requests.reason} :
-                {start_date}
-                {end_date}
-                {requests.approval}
+               <div className='single_request'>
+                <div>{requests.reason}</div>
+                <div>{start_date} to {end_date}</div>                
+                <div className={requests.approval==='Approved' ? 'green' : 'red'}>{requests.approval}</div>
                 </div> : null } 
               </div>
       
@@ -73,6 +72,7 @@ class Calendar extends Component {
                     }}
                 />
                 <div className='all_requests'>
+                    <div className='title'>All Requests</div>
                  <div>
                 {notificationDisplayed }
                  </div>
