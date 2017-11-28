@@ -112,3 +112,16 @@
 .mapped_notifications {
     margin-top: 70px;
 }
+
+.circle {
+    background: $lightestColor;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 95px;
+    top: 25px;
+}

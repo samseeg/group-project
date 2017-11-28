@@ -3,7 +3,6 @@ import './EmpRequest.css';
 import NavBar from '../../Employee/NavBar/NavBar.js'; 
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { removeRequest } from './../../ducks/reducer.js'
 
 
 class EmpRequests extends Component {
@@ -76,7 +75,7 @@ class EmpRequests extends Component {
                                 <option value="Denied">Denied</option>
                             </select>
 
-                            <button className='submit_btn' onClick={()=>{this.approveSubmit(requests.id); this.props.removeRequest(i); this.reloadPage()}}>SUBMIT</button>
+                            <button className='submit_btn' onClick={()=>{this.approveSubmit(requests.id); this.reloadPage()}}>SUBMIT</button>
                         </div>
 
                     </div>
@@ -102,4 +101,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { removeRequest })(EmpRequests);
+export default connect(mapStateToProps)(EmpRequests);
