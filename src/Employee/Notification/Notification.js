@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { getUserInfo } from './../../ducks/reducer.js'
 
 
 class Notification extends Component {
@@ -12,11 +14,12 @@ class Notification extends Component {
     }
     // this.notificationRender = this.notificationRender.bind(this)
   }
-  componentDidMount() {
-    axios.get('/api/admin/get_requests').then(response => {
+  componentDidUpdate(id) {
+    axios.get(`/api/admin/get_requests/${this.props.user.id}`).then(response => {
         this.setState({
             requests: response.data
         })
+
     })
 }
   // notificationRender(value){
@@ -29,18 +32,17 @@ class Notification extends Component {
     const notificationDisplayed = this.state.requests.map((requests, i) => {
       const start_date = requests.start_date.replace(/T.*/, '')
       const end_date = requests.end_date ? requests.end_date.replace(/T.*/, '') : 'N/A'
-      const approval = requests.approval ? requests.approval.replace(/T.*/, '') : 'N/A'
+      const approval = requests.approval
       return (
-        <div key={i}> {requests.user_name ===  "Sarah Jorgenson" ?  
+      
         <div key={i}>
-         { approval === "Approved" || approval === "Denied" ? <div>
-          {start_date}
-          {end_date}
-          {approval}
-          </div> : null  }
-        </div> 
-        : null}
-        </div>
+        {approval === "Approved" || approval === "Denied" ?
+       <div className='single_request'>
+        <div>{requests.reason}</div>
+        <div>{start_date} to {end_date}</div>                
+        <div className={requests.approval==='Approved' ? 'green' : 'red'}>{requests.approval}</div>
+        </div> : null } 
+    </div>
 
       )
     })
@@ -52,10 +54,11 @@ class Notification extends Component {
     )
   }
 }
+function mapStateToProp(state) {
+  return {
+      user: state.user
+  }
+}
 
-
-
-
-
-export default Notification;
+export default connect(mapStateToProp, { getUserInfo })(Notification);
 

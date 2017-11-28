@@ -14,24 +14,27 @@ class Calendar extends Component {
             requests: [],
             rendering: false,
         }
-        // this.notificationRender = this.notificationRender.bind(this)
+        
     }
-    componentDidMount() {
-        axios.get('/api/admin/get_requests').then(response => {
+    componentDidMount(id) {
+        axios.get(`/api/admin/get_requests/${this.props.user.id}`).then(response => {
             this.setState({
                 requests: response.data
             })
+
         })
-        this.props.getUserInfo()
+        
     }
+  
+      
+    
     render() {
         const notificationDisplayed = this.state.requests.map((requests, i) => {
             const start_date = requests.start_date.replace(/T.*/, '')
             const end_date = requests.end_date ? requests.end_date.replace(/T.*/, '') : 'N/A'
             const approval = requests.approval
-            const user_id = requests.user_id
             return (
-
+            
              <div key={i}>
                 {approval === "Approved" || approval === "Denied" ?
                <div className='single_request'>
@@ -39,8 +42,7 @@ class Calendar extends Component {
                 <div>{start_date} to {end_date}</div>                
                 <div className={requests.approval==='Approved' ? 'green' : 'red'}>{requests.approval}</div>
                 </div> : null } 
-              </div>
-      
+            </div>
             )
           })
         return (
