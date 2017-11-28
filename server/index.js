@@ -81,7 +81,7 @@ passport.deserializeUser(function (id, done) {
         })
 })
 //------employee--------//
-app.get('/api/employee/get_timecard', controller.get_timecard);
+app.get('/api/employee/get_timecard/:id', controller.get_timecard);
 app.get('/api/admin/get_emp_timecard/:username', controller.get_emp_timecard);
 app.get('/api/admin/get_requests/:id', controller.get_requests);
 app.get('/api/admin/get_admin_requests', controller.get_admin_requests);

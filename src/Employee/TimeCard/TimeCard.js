@@ -10,6 +10,8 @@ import {
 } from 'material-ui/Table';
 import axios from 'axios';
 import NavBar from './../NavBar/NavBar'
+import { connect } from 'react-redux';
+import { getUserInfo } from './../../ducks/reducer.js'
 
 class TimeCard extends Component {
   constructor() {
@@ -18,15 +20,13 @@ class TimeCard extends Component {
       timecard: []
     }
   }
-  componentDidMount() {
-    axios.get('/api/employee/get_timecard').then(response => {
-      this.setState({
-        timecard: response.data
-      })
-      console.log(response.data)
+  componentDidMount(id) {
+    axios.get(`/api/employee/get_timecard/${this.props.user.id}`).then(response => {
+        this.setState({
+            timecard: response.data
+        })
     })
   }
-
   render() {
     const timecardDisplayed = this.state.timecard.map((timecard, i) => {
       return (
@@ -67,5 +67,9 @@ class TimeCard extends Component {
     )
   }
 }
-
-export default TimeCard;
+function mapStateToProp(state) {
+  return {
+      user: state.user
+  }
+}
+export default connect(mapStateToProp, { getUserInfo })(TimeCard);
