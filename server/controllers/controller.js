@@ -24,14 +24,16 @@ module.exports = {
                 console.log(response);
                 res.status(200).send(response)})
     },
-
-    // get_notification: (req, res, next) => {    
-    //     const db = req.app.get("db")
-    //     db.get_notification()
-    //         .then(response => {
-    //             console.log(response);
-    //             res.status(200).send(response)})
-    // },
+    
+    get_admin_requests: (req, res, next) => {    
+        const db = req.app.get("db")
+        db.get_admin_requests()
+            .then(response => {
+                console.log(response);
+                res.status(200).send(response)})
+    },
+    
+   
 
     //-------------POST------------------//
     
