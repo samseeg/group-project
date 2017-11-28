@@ -3,7 +3,7 @@ module.exports = {
     //--------------GET------------------//
     get_timecard: (req, res, next) => {    
         const db = req.app.get("db")
-        db.get_timecard()
+        db.get_timecard([req.params.id])
             .then(response => {
                 console.log(response);
                 res.status(200).send(response)})
