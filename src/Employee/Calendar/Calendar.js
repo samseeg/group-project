@@ -3,10 +3,47 @@ import './Calendar.css';
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
 import NavBar from './../NavBar/NavBar'
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { getUserInfo } from './../../ducks/reducer.js'
 
 class Calendar extends Component {
-
+    constructor() {
+        super();
+        this.state = {
+            requests: [],
+            rendering: false,
+        }
+        // this.notificationRender = this.notificationRender.bind(this)
+    }
+    componentDidMount() {
+        axios.get('/api/admin/get_requests').then(response => {
+            this.setState({
+                requests: response.data
+            })
+        })
+        this.props.getUserInfo()
+    }
     render() {
+        const notificationDisplayed = this.state.requests.map((requests, i) => {
+            const start_date = requests.start_date.replace(/T.*/, '')
+            const end_date = requests.end_date ? requests.end_date.replace(/T.*/, '') : 'N/A'
+            const approval = requests.approval
+            const user_id = requests.user_id
+            return (
+
+             <div key={i}>
+                {approval === "Approved" || approval === "Denied" ?
+               <div>
+                {requests.reason} :
+                {start_date}
+                {end_date}
+                {requests.approval}
+                </div> : null } 
+              </div>
+      
+            )
+          })
         return (
             <div className='container'>
                 <NavBar />
@@ -36,15 +73,18 @@ class Calendar extends Component {
                     }}
                 />
                 <div className='all_requests'>
-                    <div className='title'>All Requests</div>
-                    <div className='content'>Vacation: 12/5 - 12/7 APPROVED</div>
-                    <div className='content'>Doctor's Appointment: 12/3 DENIED</div>
-                    <div className='content'>Personal Day: 12/25 DENIED</div>
+                 <div>
+                {notificationDisplayed }
+                 </div>
                 </div>
             </div>
 
         )
     }
 }
-
-export default Calendar;
+function mapStateToProp(state) {
+    return {
+        user: state.user
+    }
+}
+export default connect(mapStateToProp, { getUserInfo })(Calendar);
