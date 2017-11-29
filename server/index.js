@@ -85,7 +85,6 @@ app.get('/api/employee/get_timecard/:id', controller.get_timecard);
 app.get('/api/admin/get_emp_timecard/:username', controller.get_emp_timecard);
 app.get('/api/admin/get_requests/:id', controller.get_requests);
 app.get('/api/admin/get_admin_requests', controller.get_admin_requests);
-// app.get('/api/employee/get_notification', controller.get_notification);
 app.post('/api/employee/submit_clockin', controller.submit_clockin);
 app.post('/api/employee/submit_requests', controller.submit_requests);
 app.put('/api/employee/add_clockout', controller.add_clockout);

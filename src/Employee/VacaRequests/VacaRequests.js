@@ -90,7 +90,6 @@ class VacaRequests extends Component {
                             })
                         }} rows='10' cols='50'></textarea> : null}
                         <div className='button_friends'>
-                            {/* <input type="button" value="RESET" onClick="resetform()"  /> */}
                             <button className='btn reset_vaca' type="reset" onClick={this.reloadPage}>RESET</button>
                             <button className='btn submit_vaca' type="submit" onClick={this.submitForm}>SUBMIT</button>
                         </div>

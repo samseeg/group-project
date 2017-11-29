@@ -5,7 +5,6 @@ import 'react-infinite-calendar/styles.css';
 import NavBar from './../NavBar/NavBar'
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { getUserInfo } from './../../ducks/reducer.js'
 
 class Calendar extends Component {
     constructor() {
@@ -16,6 +15,7 @@ class Calendar extends Component {
         }
         
     }
+
     componentDidMount(id) {
         axios.get(`/api/admin/get_requests/${this.props.user.id}`).then(response => {
             this.setState({
@@ -89,4 +89,4 @@ function mapStateToProp(state) {
         user: state.user
     }
 }
-export default connect(mapStateToProp, { getUserInfo })(Calendar);
+export default connect(mapStateToProp)(Calendar);

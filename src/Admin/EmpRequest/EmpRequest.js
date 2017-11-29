@@ -3,6 +3,7 @@ import './EmpRequest.css';
 import NavBar from '../../Employee/NavBar/NavBar.js'; 
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { getAdminRequests, removeAdminRequests } from './../../ducks/reducer.js';
 
 
 class EmpRequests extends Component {
@@ -11,23 +12,17 @@ class EmpRequests extends Component {
         this.state = {
             requests: [],
             value: 0,
-            approval:"",
-            greyed_out: false,
-            select: false,
+            approval:"Select",
+            // select: false,
             requestid:0
         }
-        this.approveSubmit = this.approveSubmit.bind(this);
-        this.reloadPage = this.reloadPage.bind(this);
-        // this.greyOut = this.greyOut.bind(this);
-       
+        this.approveSubmit = this.approveSubmit.bind(this);    
+        this.handleApproval = this.handleApproval.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     componentDidMount() {
-        axios.get('/api/admin/get_admin_requests').then(response => {
-            this.setState({
-                requests: response.data
-            })
-        })
+        this.props.getAdminRequests();
     }
 
     approveSubmit(requestid) {
@@ -35,27 +30,37 @@ class EmpRequests extends Component {
             approval: this.state.approval,
             requestid
         }
-        console.log(body)
+        // console.log(body)
         axios.put('/api/admin/approval', body).then(response => {
-            console.log("hi")
+            // console.log("hi")
             
         })
+        this.setState({approval:""})        
+    } 
+
+    handleApproval(e) {
+        this.setState({
+            approval: e.target.value
+        })
+    }
+    
+    reset() {
+        this.setState({
+            approval: "Select"
+        })
+        var dropDown = document.getElementById("approval");
+        dropDown.selectedIndex = "Select";
     }
 
-    reloadPage() {
-        window.location.reload();
-    }
 
- 
  
 
     render() {
-        const requestsDisplayed = this.state.requests.map((requests, i) => {
+        const requestsDisplayed = this.props.adminRequest.map((requests, i) => {
             const start_date = requests.start_date.replace(/T.*/, '')
             const end_date = requests.end_date ? requests.end_date.replace(/T.*/, '') : 'N/A'
-            return (
-           
-                <div key={i} className={this.state.greyed_out ? 'greyed_out' : 'purple_box'}>
+            return (           
+                <div key={i} className='purple_box' >
                     <div className='requests'>
 
                         <div className='requests_block'>
@@ -68,17 +73,18 @@ class EmpRequests extends Component {
                         </div>
 
                         <div className='approval'>
-                            <select onChange={(e)=>this.setState({
-                                approval: e.target.value})}>
+                            <select type="reset" id="approval" onChange={this.handleApproval}>
                                 <option value="Select">Select</option>
                                 <option value="Approved">Approved</option>
                                 <option value="Denied">Denied</option>
                             </select>
 
-                            <button className='submit_btn' onClick={()=>{this.approveSubmit(requests.id); this.reloadPage()}}>SUBMIT</button>
+                            <button className='submit_btn' onClick={()=>{this.approveSubmit(requests.id); this.props.removeAdminRequests(i); this.reset()}}>SUBMIT</button>
                         </div>
 
                     </div>
+                   
+               
                 </div>
             )
         })
@@ -95,10 +101,11 @@ class EmpRequests extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log("state from private", state)
+    // console.log("state from private", state)
     return {
-        user: state.user
+        user: state.user,
+        adminRequest: state.adminRequest
     }
 }
 
-export default connect(mapStateToProps)(EmpRequests);
+export default connect(mapStateToProps, { getAdminRequests, removeAdminRequests })(EmpRequests);
