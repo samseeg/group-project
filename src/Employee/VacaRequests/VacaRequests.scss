@@ -39,7 +39,7 @@
 }
 
 .submit_vaca {
-    background: $darkColor;
+    background: linear-gradient($lightColor 0%, $darkColor 75%);
     box-shadow: 0 3px 10px $darkestColor;    
     margin-right: 32px;
 }

@@ -22,7 +22,7 @@
         font-size: 20px;
         font-weight: 700;
         letter-spacing: 1px;
-        background: $lightColor;
+        background: linear-gradient($lightColor 0%, $darkColor 75%);
         border: none;
         color: $darkestColor;
         box-shadow: 0px 3px 10px $darkestColor;
