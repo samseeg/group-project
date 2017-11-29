@@ -49,7 +49,7 @@ class NavBar extends Component {
 
             <div className='NavBar'>
                 <div className='notification' onClick={this.notificationsSlide}>
-                    {this.props.request.length ? <div className='circle'>{this.props.request.length}</div> : null}
+                    {this.props.request.length ? <div className='circle'>♫</div> : null}
                     <img src={notification} alt='' />
                 </div>
 

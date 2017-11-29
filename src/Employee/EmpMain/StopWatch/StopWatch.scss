@@ -50,7 +50,8 @@
     border: 0;
     border-radius: 6px; 
     outline: none;
-    background: $darkColor; }
+    background: linear-gradient($lightColor 0%, $darkColor 75%);
+  }
   
   .start-btn {
     color: $darkestColor; }
@@ -59,7 +60,7 @@
     color: $lightestColor; }
 
 .clockout {
-    background: $darkestColor;
+    background: linear-gradient(rgb(102, 95, 95), $darkestColor);
     box-shadow: 0px 3px 10px $darkestColor;
 }
 

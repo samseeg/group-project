@@ -35,7 +35,7 @@
   width: 40%; }
   .approval select {
     font-size: 16px;
-    background: #D6D3F0;
+    background: linear-gradient(white 0%, #D6D3F0 50%);
     box-shadow: 0px 2px 5px #28262C;
     padding: 2px 10px;
     height: 40px; }
