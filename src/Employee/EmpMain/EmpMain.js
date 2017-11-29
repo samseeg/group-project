@@ -36,7 +36,6 @@ class EmpMain extends Component {
                         ticking={true}
                         format={`h:mm:ss A`}
                     />
-                    {/* <button className='clockin'>CLOCK IN</button> */}
                     {!this.props.user.is_admin ?
                     <StopWatch /> :
                     null}

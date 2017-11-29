@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
 import { connect } from 'react-redux';
 import { getUserInfo, getNotifications } from './../../ducks/reducer.js';
 import './Notification.css';
@@ -15,12 +14,8 @@ class Notification extends Component {
       users: [],
       rendering: false
     }
-    // this.notificationRender = this.notificationRender.bind(this)
   }
 
-//   componentDidMount() {
-//     this.props.getNotifications(this.props.user.id);
-// }
 
   render() {
     const notificationDisplayed = this.props.request.map((requests, i) => {

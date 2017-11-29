@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import BadgeExampleSimple from './../Notification/Notification'
 import './NavBar.css';
 import { connect } from 'react-redux';
 import { getUserInfo, getNotifications } from './../../ducks/reducer.js';
@@ -8,7 +7,6 @@ import x_icon from './../../assets/x_icon_tiny.svg';
 import notification from './../../assets/notification_tiny.svg';
 import hamburger from './../../assets/hamburger_tiny.svg';
 import Notification from './../Notification/Notification.js';
-// import axios from 'axios';
 
 
 class NavBar extends Component {

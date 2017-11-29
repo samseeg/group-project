@@ -13,25 +13,13 @@ const formattedSeconds = (sec) =>
     ':' +
     ('0' + sec % 60).slice(-2)
 
-// const formattedSeconds = (sec) =>
-//     Math.floor(sec / 60) +
-
-
-
-// const formattedSeconds = (sec) =>
-//  if (sec >= 60) {
-//      sec = 0;
-
-//  }
 function secondsToHms(d) {
     d = Number(d);
     var h = Math.floor(d / 3600);
     var m = Math.floor(d % 3600 / 60);
-    // var s = Math.floor(d % 3600 % 60);
 
     var hDisplay = h > 0 ? h + ':' : "";
     var mDisplay = m > 0 ? (m < 10 ? '0' + m : m) : "";
-    // var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
     return hDisplay + mDisplay; 
 }
 
@@ -60,10 +48,8 @@ class StopWatch extends Component {
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1; 
-        // var yyyy = today.getFullYear();
         var HH = today.getHours(); 
         var MM = today.getMinutes(); 
-        // var SS = today.getSeconds();
         if(dd<10) {
             dd = '0'+dd
         } 
@@ -93,10 +79,8 @@ class StopWatch extends Component {
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1; 
-        // var yyyy = today.getFullYear();
         var HH = today.getHours(); 
         var MM = today.getMinutes(); 
-        // var SS = today.getSeconds();
         if(dd<10) {
             dd = '0'+dd
         } 
@@ -146,43 +130,9 @@ class StopWatch extends Component {
 
 
 
-    render() {
-        // let now = new Date()
-        
+    render() {        
         return (
-
-
             <div className='stopwatch'>
-
-                {/* ------------------recording timer -----------------*/}
-
-
-
-                {/* {(this.state.secondsElapsed === 0 ||
-                    this.incrementer === this.state.lastClearedIncrementer
-                    ? <Button className="start-btn" onClick={this.handleStartClick.bind(this)}>Clock In</Button>
-                    : <Button className="stop-btn" onClick={this.handleStopClick.bind(this)}>Clock Out</Button>
-                )}
-
-                {(this.state.secondsElapsed !== 0 &&
-                    this.incrementer === this.state.lastClearedIncrementer
-                    ?
-                    (this.state.secondsElapsed !== 0 ||
-                        this.incrementer !== this.state.lastClearedIncrementer
-                        ? <Button onClick={this.handleStartClick.bind(this)}>Lunch End</Button>
-                        : null
-                        )
-                        :
-                (this.state.secondsElapsed !== 0 ||
-                    this.incrementer !== this.state.lastClearedIncrementer
-                    ? <Button onClick={this.handleStopClick.bind(this)}>Lunch Start</Button>
-                    : null
-                )
-                
-                
-
-                )} */}
-
                 {(this.state.secondsElapsed === 0 ||
                     this.incrementer === this.state.lastClearedIncrementer
                     ? <Button className="start-btn" onClick={()=>{this.handleStartClick(); this.submitClockin()}}>CLOCK IN</Button>
@@ -200,8 +150,7 @@ class StopWatch extends Component {
                     ? <Button className="reset" onClick={this.handleResetClick.bind(this)}>RESET</Button>
                     : null
                 )}
-                      <div>
-                       
+                      <div>                    
                     
                     
                     <div>{this.state.today}</div>
