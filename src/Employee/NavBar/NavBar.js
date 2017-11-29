@@ -25,7 +25,8 @@ class NavBar extends Component {
     }
 
     componentWillReceiveProps() {
-        if (this.props.user.id) {
+        if (this.props.user.is_admin === null && !this.props.request.length) {
+            console.log('props received')
             this.props.getNotifications(this.props.user.id);
         }
     }
