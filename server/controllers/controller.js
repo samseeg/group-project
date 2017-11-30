@@ -10,11 +10,13 @@ module.exports = {
     },
 
     get_emp_timecard: (req, res, next) => {    
+        console.log('hit the controller')
         const db = req.app.get("db")
         db.get_emp_timecard([req.params.username])
             .then(response => {
-                // console.log(response);
-                res.status(200).send(response)})
+                console.log('response from db', response);
+                res.status(200).send(response);
+            })
     },
 
     get_requests: (req, res, next) => {    
