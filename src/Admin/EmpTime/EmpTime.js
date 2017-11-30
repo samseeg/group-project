@@ -12,6 +12,7 @@ import DropDownMenu from "material-ui/DropDownMenu";
 import MenuItem from 'material-ui/MenuItem';
 import axios from 'axios';
 import NavBar from '../../Employee/NavBar/NavBar.js';
+import fns from './EmpTime.functions.js'
 
 class EmpTime extends Component {
     constructor() {
@@ -26,11 +27,12 @@ class EmpTime extends Component {
     }
     selectName(username) {
 
-        axios.get(`/api/admin/get_emp_timecard/${username}`).then(response => {
+        fns.getEmpTimeCard(`/api/admin/get_emp_timecard/${username}`).then(response => {
+            console.log("heyzz")
             this.setState({
-                timecard: response.data
+                timecard: response
             })
-            console.log(response.data)
+            
         })
     }
     valueName() {

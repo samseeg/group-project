@@ -7,12 +7,9 @@ import NavBar from './../NavBar/NavBar';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { getUserInfo } from './../../ducks/reducer.js'
-
-
 class VacaRequests extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             value: 0,
             start_date: null,
@@ -28,24 +25,19 @@ class VacaRequests extends Component {
         this.setState({
             start_date: start_date
         })
-
     }
     handleEndDate(event, end_date) {
         this.setState({
             end_date: end_date
         })
-
     }
     componentDidMount() {
         this.props.getUserInfo()
     }
-
     reloadPage() {
         window.location.reload();
     }
-
     submitForm = () => {
-
         const body = {
             user_id: this.props.user.id,
             start_date: this.state.start_date,
@@ -56,26 +48,19 @@ class VacaRequests extends Component {
             console.log('requests submitted!')
         })
     }
-
     handleChange = (event, index, value) => this.setState({ value });
-
     render() {
         return (
             <div>
                 <NavBar />
                 <div className='VacaContainer'>
-
                     <div className='title'>Time Off Requests</div>
                     <form>
-
                         <DatePicker firstDayOfWeek={0} onChange={this.handleStartDate} value={this.state.start_date}
-
-
                             className='datepicker' hintText="Start Date"
                         />
                         <DatePicker firstDayOfWeek={0} value={this.state.end_date} onChange={this.handleEndDate}
                             hintText="End Date" />
-
                         <DropDownMenu value={this.state.value} onChange={this.handleChange} className='dropdown'>
                             <MenuItem value={0} primaryText="Reason" />
                             <MenuItem value={"Vacation"} primaryText="Vacation" />
