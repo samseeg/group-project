@@ -1,0 +1,519 @@
+{
+	"info": {
+		"name": "Endpoint Testing MESS",
+		"_postman_id": "19cc9f3c-5c32-bb75-dcf4-389952be47f0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - get timecard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/employee/get_timecard/9",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+                        "employee",
+                        "get_timecard",
+                        "9"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+        },
+        {
+			"name": "GET - get timecard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/employee/get_timecard/10",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+                        "employee",
+                        "get_timecard",
+                        "10"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+        },
+        {
+			"name": "GET - get timecard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/employee/get_timecard/4",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+                        "employee",
+                        "get_timecard",
+                        "4"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+        },
+        {
+			"name": "GET - get timecard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/employee/get_timecard/12",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+                        "employee",
+                        "get_timecard",
+                        "12"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - get employee timecard/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/admin/get_emp_timecard/Eunbin%20Kang",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"admin",
+                        "get_emp_timecard",
+                        "Eunbin Kang"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+        },
+        {
+			"name": "GET - get employee timecard/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/admin/get_emp_timecard/Sam%20Seegmiller",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"admin",
+                        "get_emp_timecard",
+                        "Sam Seegmiller"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+        },
+        {
+			"name": "GET - get employee timecard/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/admin/get_emp_timecard/Megan%20Miller",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"admin",
+                        "get_emp_timecard",
+                        "Megan Miller"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+        },
+        {
+			"name": "GET - get employee timecard/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/admin/get_emp_timecard/Sarah%20Jorgenson",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"admin",
+                        "get_emp_timecard",
+                        "Sarah Jorgenson"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - get requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/admin/get_requests/4",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+                        "admin",
+                        "get_requests",
+                        "4"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+        },
+        {
+			"name": "GET - get requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/admin/get_requests/12",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+                        "admin",
+                        "get_requests",
+                        "12"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+        },
+        {
+			"name": "GET - get requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/admin/get_requests/10",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+                        "admin",
+                        "get_requests",
+                        "10"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+        },
+        {
+			"name": "GET - get requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/admin/get_requests/9",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+                        "admin",
+                        "get_requests",
+                        "9"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+        {
+			"name": "GET - get admin requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3005/api/admin/get_admin_requests",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+                        "admin",
+                        "get_admin_requests"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+        {
+            "name": "POST - submit clockin",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"clock_in\" \"11/28 8:53\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3005/api/employee/submit_clockin",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3005",
+                    "path": [
+                        "api",
+                        "employee",
+                        "submit_clockin"
+                    ]
+                },
+                "description": ""
+            },
+            "response": []
+        },   {
+            "name": "POST - submit clockin",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"clock_in\" : \"11/28 13:50\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3005/api/employee/submit_clockin",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3005",
+                    "path": [
+                        "api",
+                        "employee",
+                        "submit_clockin"
+                    ]
+                },
+                "description": ""
+            },
+            "response": []
+        },   {
+            "name": "POST - submit clockin",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"clock_in\" \"11/28 16:16\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3005/api/employee/submit_clockin",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3005",
+                    "path": [
+                        "api",
+                        "employee",
+                        "submit_clockin"
+                    ]
+                },
+                "description": ""
+            },
+            "response": []
+        },   {
+            "name": "POST - submit clockin",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"clock_in\" \"11/28 16:17\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3005/api/employee/submit_clockin",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3005",
+                    "path": [
+                        "api",
+                        "employee",
+                        "submit_clockin"
+                    ]
+                },
+                "description": ""
+            },
+            "response": []
+        },   {
+            "name": "POST - submit clockin",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"clock_in\" \"11/28 16:23\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3005/api/employee/submit_clockin",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3005",
+                    "path": [
+                        "api",
+                        "employee",
+                        "submit_clockin"
+                    ]
+                },
+                "description": ""
+            },
+            "response": []
+        },   {
+            "name": "POST - submit clockin",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"clock_in\" \"11/28 16:42\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3005/api/employee/submit_clockin",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3005",
+                    "path": [
+                        "api",
+                        "employee",
+                        "submit_clockin"
+                    ]
+                },
+                "description": ""
+            },
+            "response": []
+        },   {
+            "name": "POST - submit clockin",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"clock_in\" \"11/29 11:51\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3005/api/employee/submit_clockin",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3005",
+                    "path": [
+                        "api",
+                        "employee",
+                        "submit_clockin"
+                    ]
+                },
+                "description": ""
+            },
+            "response": []
+        }
+	]
+}
